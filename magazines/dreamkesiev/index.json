@@ -1,0 +1,110 @@
+{
+    "shortTitle":"Dream KesieV",
+    "title":"Dream KesieV",
+    "year":2021,
+    "sourcesRoot":"sources",
+    "pages":[
+        { 
+            "type":"cover",
+            "title":"Cover",
+            "style":"background: rgb(238,174,202);background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+            "elements":[
+                {
+                    "type":"top",
+                    "text":" "
+                },{
+                    "type":"title",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;text-shadow:0px 0px 10px #fff",
+                    "text":"Dream KesieV"
+                },{
+                    "type":"subtitle",
+                    "style":"left:-10px;right:-10px;background-color:#fff;color:#3d3b3c;font-family:'Web IBM VGA 8x16';margin-left:0;margin-right:0;padding:10px 30px;transform: rotate(-3deg);box-shadow:0px 0px 10px #fff",
+                    "text":"Tutorials, snippets, and notes about Programmino and the dream-kesiev package"
+                },{
+                    "type":"footer",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;border-top:1px solid #fff",
+                    "text":"&copy; 2022 by KesieV Norimaki"
+                }
+            ]
+        },
+        { "type":"firstpage", "title":"Introduction", "subtitle":"Living The Dream", "author":"KesieV", "article":[
+            "The last weeks of December 2021, and for some days in a row, I've dreamt of floating chunks of unrecognizable code, unreadable walls of text, and pulsating lo-res graphics coming from computers and languages I've used in my past.",
+            "In the morning I was used to wondering what kind of machine could be able to do that. One day, as a challenge, I decided to attempt an implementation.",
+            "The code of that dreams was a twisted mix of old and new languages. I needed an interpreter able, to some extent, to understand multiple syntaxes at the same time. Languages and standards changed a lot over the years and many of them are not compatible with each other. I had to make several compromises.",
+            "Moreover, the graphics weren't coming from a single exact machine: there were Commodore 64 sprites but with wrong and yet familiar color palettes, stretched ZX Spectrum UDGs, and so on. I needed something able to recreate that mess putting together stuff from different machines. Emulation wasn't an option, so I decided to simulate different features of these machines in a way I could run them together.",
+            "Programmino is the code interpreter and infrastructure that ties everything together: each element, such as a palette, a sprite engine, a font, or an interpreter configuration is contained in a package and multiple packages can be used together regardless of where they came from. The result is something like a Fantasy Computer - or Fantasy Console if you prefer - but Programmino is only a means to achieve my goal.",
+            "Then I implemented the features I could remember from dreams, splitting them into single packages. I tried my best to make order in that nonsense and to get inspiration from the original hardware and programs.",
+            "To recreate that \"dreamy\" feeling, I selected some of the packages that made sense together and grouped them into the <span class='code'>dream-kesiev</span> meta-package, that's the one Programmino uses by default.",
+            "Finally, I've written a few working programs that resemble the ones I've seen in that dreams: irregular, wrong, and yet familiar.",
+            "This magazine collects my work so far.",
+            "Thank you so much for reading and have fun. And please, don't learn how to code from this magazine - these programs are coming from fever dreams."
+        ]},
+        { "type":"toc", "title":"Table of Contents" },
+        { "type":"source", "title":"Variables", "author":"by KesieV", "source":"variables.kes", "article":[
+            "No doubt that In that dreams, I've seen names of people and things - Maybe variables? That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Functions", "author":"by KesieV", "source":"functions.kes", "article":[
+            "In that dreams, I've seen the FUNCTION word floating around multiple time. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - SIN", "author":"by KesieV", "source":"intermission-sin.kes", "article":[
+            "Three days after the first dream I was a little worried. Every night it was the same and yet different. Every night it was vague and yet lucid. Is that what I deserve?"
+        ] },
+        { "type":"source", "title":"Arrays (1)", "author":"by KesieV", "source":"arrays.kes", "article":[
+            "In that dreams, I've seen squared brackets with numbers - Arrays, maybe? That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Arrays (2)", "author":"by KesieV", "source":"arrays2.kes", "article":[
+            "In that dreams, I've seen long thin streams symbols - Maybe that were mixed and multidimensional inline arrays and objects? That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - GOTO", "author":"by KesieV", "source":"intermission-goto.kes", "article":[
+            "I'm living a different place. I'm living a different job. I'm living a different world. I'm living a different war. Where is my place?"
+        ] },
+        { "type":"source", "title":"Arrays (3)", "author":"by KesieV", "source":"arrays3.kes", "article":[
+            "In that dreams, I've seen brackets changing shape when I wasn't looking at them. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Simple objects", "author":"by KesieV", "source":"simpleobjects.kes", "article":[
+            "In that dreams, I've seen chunks of code that looked like JavaScript. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - GET A $", "author":"by KesieV", "source":"intermission-getadollar.kes", "article":[
+            "Am I what I'm paid for? Am I pressed for doing right? Why every direction seems wrong? There is a part of me that must grow up."
+        ] },
+        { "type":"source", "title":"Ternaries", "author":"by KesieV", "source":"ternary.kes", "article":[
+            "In that dreams, I've seen ternaries, some scattered around and some violently nested - Maybe due to the code golfing I do from time to time? That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Simple OOP", "author":"by KesieV", "source":"simpleoop.kes", "article":[
+            "In that dreams, I've seen the word CLASS repeated few times. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - WORRIES", "author":"by KesieV", "source":"intermission-worries.kes", "article":[
+            "The unsettling feeling of alien familiarity. Everything is different and yet the same. Everything is like it used to be and yet I can't recognize it."
+        ] },
+        { "type":"source", "title":"Switch/Case", "author":"by KesieV", "source":"switchcase.kes", "article":[
+            "In that dreams, I've seen some comb-shaped code - Maybe they were switch/cases? That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Cycles", "author":"by KesieV", "source":"cycles.kes", "article":[
+            "In that dreams, I've seen countless cycles with multiple syntaxes. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - PLASMA", "author":"by KesieV", "source":"intermission-plasma.kes", "article":[
+            "I know my shape."
+        ] },
+        { "type":"source", "title":"Math", "author":"by KesieV", "source":"mathoperators.kes", "article":[
+            "In that dreams, I've seen some vague math formulas here and there. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Boolean", "author":"by KesieV", "source":"boolean.kes", "article":[
+            "In that dreams, I've seen capital TRUE and FALSE submerging from walls of texts. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - CREDITS", "author":"by KesieV", "source":"intermission-credits.kes", "article":[
+            "As my reality is cracked, seemingly endless credits are scrolling by."
+        ] },
+        { "type":"source", "title":"Assign", "author":"by KesieV", "source":"assign.kes", "article":[
+            "In that dreams, I've seen swirls of equals surrounded by the strangest symbols. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Code labels", "author":"by KesieV", "source":"spaghetti.kes", "article":[
+            "In that dreams, I've seen entwined code, knotting multiple times in endless loops. That's why I've added a pinch of that."
+        ] },
+        { "type":"source", "title":"Intermission - MASTER", "author":"by KesieV", "source":"intermission-yn.kes", "article":[
+            "Everything is confusing. The spaces giving me freedom are a lie. I want to play but fun is deceiving."
+        ] },
+        { "type":"source", "title":"Text display", "author":"by KesieV", "source":"textdisplay.kes", "article":[
+            "In that dreams, I've seen text spawning around, in windows, in progress bars, in buttons, in labels, in stickmans... That's why I've added a pinch of that."
+        ] }
+    ]
+}

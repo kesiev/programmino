@@ -1,0 +1,3 @@
+10 FOR n=0 TO 255
+20 PLOT n,88+80*SIN (n/128*PI)
+30 NEXT n 

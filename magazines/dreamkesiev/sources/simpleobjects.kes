@@ -1,0 +1,9 @@
+writeln("Create some objects and subobjects");
+dim obj(1),obj.subobj(1)
+print "Set some attributes"
+obj.name="hello"
+obj.subobj.pear="hello world"
+obj.method=function(arg) return "My name is "+this.name+" and argument was "+arg+"!"
+print " \\_ obj.name: ";obj.name
+print " \\_ obj.subobj.pear: "+obj.subobj.pear
+print " \\_ obj.method(123): "+obj.method(123)

@@ -1,0 +1,6 @@
+12 PRINT "press right."
+34 GET A$:IF A$=="" GOTO 34
+56 IF A$=CHR$(29) THEN PRINT "that was right." ELSE PRINT "your ";A$;" (";ASC(A$);") wasn't right."
+78 GOTO 34
+
+// [programmino:>dream-64]

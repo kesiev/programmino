@@ -1,0 +1,271 @@
+{
+    "shortTitle":"Dream 64",
+    "title":"Dream 64",
+    "year":2021,
+    "sourcesRoot":"sources",
+    "sourcesPackages":">dream-64",
+    "pages":[
+        { 
+            "type":"cover",
+            "title":"Cover",
+            "style":"background:rgba(0,90,179,1);background: linear-gradient(180deg, rgba(0,90,179,1) 0%, rgba(0,90,179,1) 8%, rgba(255,0,0,1) 9%, rgba(255,124,0,1) 16%, rgba(236,255,0,1) 22%, rgba(14,255,0,1) 30%, rgba(5,255,252,1) 36%, rgba(0,90,179,1) 37%, rgba(0,90,179,1) 100%);",
+            "elements":[
+                {
+                    "type":"top",
+                    "style":"font-family:'Keypunch029Regular';color:#fff",
+                    "text":"From all around the internet"
+                },{
+                    "type":"title large",
+                    "style":"font-family:'Web IBM VGA 8x16';color:#000;text-shadow:0px -10px 0px #fff",
+                    "text":"Dream 64"
+                },{
+                    "type":"subtitle large",
+                    "style":"background-color:#fff;box-shadow:0px -10px 0px #000;font-family:'Keypunch029Regular'",
+                    "text":"A collection of Programmino-compatible Commodore 64 BASIC games"
+                },{
+                    "type":"footer",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;border-top:5px solid rgba(255,255,255,0.3)",
+                    "text":"2022"
+                }
+            ]
+        },
+        { "type":"firstpage", "title":"Introduction", "subtitle":"Endless Challenges", "author":"KesieV", "article":[
+            "Even if Wikipedia says the Commodore 64 died in 1994, its scene is still alive and kicking - as it's happening to his cousins of the 80s.",
+            "Its late games were technically stunning, but thanks to new technologies and new code wizards, its true potential is uncovered a little by little.",
+            "But there is another side of this glorious \"previous &amp; now\" story: introducing the Commodore 64 BASIC programmers and their endless challenge. Their programs were published in books and magazines and needed to be typed in by hand at least once but with the promise of furious shootings, space adventures, and thrilling bets. A promise rarely kept - to tell the truth - due to the machine's slow interpreter.",
+            "There should be no reason nowadays to keep coding games this way - the new tools are helping a lot in leaving BASIC behind and typing-in code is just a painful reminder of the past.",
+            "But where there is an endless challenge, there are endless challengers. So new C64 BASIC games are still produced now by brave developers. I've collected some of their works in this magazine.",
+            "Programmino simulates some features inspired by the original Commodore 64, like sprites and joysticks, collected by the <span class='code'>dream-64</span> package. This way it can run some Commodore 64 BASIC games... but often with some compromises - or artistic choices, if you prefer.",
+            "Some games may be limited, some others may display some glitches, and some may not run at all.",
+            "The best way to experience these games as they were meant is using a Commodore 64 emulator or, obviously, on the original hardware."
+        ], "references":[
+            {
+                "description":"When available, the original program source can be reached by hitting the \"Read more...\" button."
+            }
+        ] },
+        { "type":"toc", "title":"Table of Contents" },
+        { "type":"source", "title":"Covid Breaker", "author":"by Davide Fichera (Naufr4g0 of Phaze101)", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10line_covidbreaker.bas", "article":[
+            "Entry in the EXTREM-256 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Ruins Xcape", "author":"by Davide Fichera (Naufr4g0 of Phaze101)", "url":"https://bunsen.itch.io/ruins-xcape-by-naufr4g0", "source":"10line_ruinsxcape.bas", "article":[
+            "You are crossing a desert covered with the ruins of a past civilization. The wind blows the sharp fragments of ruins rock into the air, which are fatal if touched.",
+            "You play as a brave adventurer, fleeing the dangerous sandstorm. He  always runs to the right of the screen at a certain speed. Your task is to divert his path up and down trying to make him avoid the flying sharp rocks. Each game screen features a gemstone, hidden in the sand, that gives you a bonus score if collected. The game becomes more and more difficult because panic leads the adventurer to run faster!",
+            "<b>Controls</b>",
+            "Use Joystick in port #2:",
+            "up/down = increases the adventurer's speed up and down respectively",
+            "fire = play again on game over"
+        ] },
+        { "type":"source", "title":"Treasure team", "author":"By Claus Dyring Jensen", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10line_treasureteam.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"10Liner-Golf", "author":"By Georg \"Endurion\" Rottensteiner", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "source":"10lines_10linergolf.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2019)"
+        ] },
+        { "type":"source", "title":"10LINES ADV", "author":"by Marco Spedaletti", "url":"https://retroprogramming.iwashere.eu/adv10", "source":"10lines_adventure.bas", "article":[
+            "10LINES ADV is an adventure game for COMMODORE 64 home computer. In this game the player assumes the role of a protagonist in an interactive story, driven by exploration and puzzle-solving. This game is designed for a single player, it is text-based and uses a text parser to translate the player's input into commands."
+        ] },
+        { "type":"source", "title":"Asteroid", "author":"By Johan Berntsson", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_asteroid.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Curse of the Aztec Temple", "author":"By romwer", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_aztec.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Azten Challenge", "author":"By Arturo Dente", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_aztenchallenge.bas", "article":[
+            "Entry in the PUR-120 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Breakout", "author":"By Johan Berntsson", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "source":"10lines_breakout.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2019)"
+        ] },
+        { "type":"source", "title":"Child's Play", "author":"By David \"dagershman\" A. Gershman", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_childsplay.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Dropper", "author":"By David A. Gershman",  "source":"10lines_dropper.bas", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2019)"
+        ] },
+        { "type":"source", "title":"Air Combat Simulator", "author":"By Roman Werner", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_flightsimulator.bas", "article":[
+            "\"Your country is under attack! This is not a drill! All drone pilots to the base!\". This IS the moment you have been trained for. In a few minutes you will take control over a high-end drone fighter equiped with a SASER canon (SASER = sound amplification by stimulatied emission of radiation). The objective is to stop any enemy targets in sight. A special helmet blanks out any real world objects so that you can clearly focus on your targets. Despite the tech, keep your altitude not only above ground but also below 24576 feet otherwise the multi-million dollar drone will crash or be torned apart.",
+            "<b>Control</b>",
+            "Keyboard WASD (W = Dive / A = Roll to the left / S = Climb / D - Roll to the right)",
+            "Align the crosshair of your fighter exactly with the enemy on screen (tank or plane) to automatically SASER strike your target.",
+            "After a crash use <Space> to restart."
+        ] },
+        { "type":"source", "title":"Flood 10", "author":"By Nick Bensema", "url":"https://bunsen.itch.io/flood-10-by-nick-bensema", "source":"10lines_flood10.bas", "article":[
+            "Cursor to move your character, RETURN to put down a block. Game is over when the flood of asterisks cannot spread anymore."
+        ] },
+        { "type":"source", "title":"Hopman", "author":"By onlineprof2010", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "source":"10lines_hopman.bas", "article":[
+            "Entry in the EXTREM-256 category at BASIC 10 Liner Contest (2019)"
+        ] },
+        { "type":"source", "title":"HUO Philosopher V2.0", "author":"By huo", "url":"https://bunsen.itch.io/huo-philosopher-v20-by-huo", "source":"10lines_huophilosopher.bas", "article":[
+            "The program HUOPHIL1 (Huo Philosopher v2.0) is a tiny program by Spyridon Kakos that can make deep philosophical conversations about any available subject. Its deep irrational understanding of the cosmos is based on nothing more than sets of random phrases the program brilliantly combines in order to produce phrases that will make any philosopher shiver from the sheer terror of its non-knowledge of metaphysics.",
+            "Just load and program and RUN it. The program will first ask you if you want to activate the neural learning functionality.",
+            "After that, the program will ask you for input.",
+            "Write anything regarding God, the cosmos or the meaning of life. Philosophy is the favorite subject of Huo Philosopher, but you can ask anything else as well. Press Enter and then the program will reply back with phrases with deep philosophical meaning.",
+            "After the answer from the computer and if you have activated neural learning, the computer will ask you whether you found the answer satisfactory. You must answer with a Y (Yes) or N (No). If your answer is N (No), then the computer will document the combination in his large brain that led to that answer so that it does not repeat it again…",
+            "As simple as that. If you do not want to continue the interesting discussion with the electronic philosopher, simply write Q and press Enter and the program will terminate.",
+            "Enjoy and have fun!",
+            "And remember...",
+            "Try not to think in order to think...",
+            "<b>Important</b>",
+            "<ul><li>Do not rush it. Just wait for the program to answer. Give it time to think...</li><li>The neural learning table L$ holds up to ten (10) combinations. Everything has a limit, even neural learning. After ten rejected phrases, the computer keeps on replacing element L$(10) again and again.</li>"
+        ] },
+        { "type":"source", "title":"TenLander", "author":"By Rosario De Chiara", "url":"https://github.com/rosdec/lander64", "source":"10lines_lander.bas", "article":[
+            "The basic idea is a lander-like game where your purpose is to let your starship to land careful contrast the gravity by using the jet engine."
+        ] },
+        { "type":"source", "title":"The Last Ninjutsu Master", "author":"By Roman \"romwer\" Werner", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "source":"10lines_lastninjutsumaster.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2019)"
+        ] },
+        { "type":"source", "title":"LogiMatch", "author":"By Logiker", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_logimatch.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"LootBox64", "author":"By Roman \"romwer\" Werner", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "source":"10lines_lootbox64.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2019)"
+        ] },
+        { "type":"source", "title":"Matrix Tribute", "author":"By Arturo Dente", "url":"https://bunsen.itch.io/matrix-tribute-by-arturo-dente", "source":"10lines_matrixtribute.bas", "article":[
+            "Entry in the SCHAU category at BASIC 10 Liner Contest (2021)"
+        ] },
+        { "type":"source", "title":"Mimizuku Saga 10", "author":"By Bago Zonde", "url":"https://bunsen.itch.io/mimizuku-saga-10-by-bago-zonde", "source":"10lines_mimizukusaga.bas", "article":[
+            "<b>Plot</b>",
+            "This is an old Japanese legend, which doesn't exist, but perhaps it could as some legends are still alive and some of them were forgotten thousands of years ago.",
+            "Your dead ancestors brought you to Yomi, the realm of the dead, as they wished to get back to life. But you know that this could only make Izanami, a gatekeeper of this dead realm angry. You've taken the shape of an eared owl - mimizuku, and sneaked into the realm with an idea to greet your ancestors and fill their hearts with sake, so they will regain the equilibrium.",
+            "To succeed, you have to greet 25 ancestors on your path and remain alive so you can get back from there. This is a hard task to complete, as with each step, your life force weakens. Also, greeting your ancestors has a price: it drains your life force as well. You can collect sake bottles which will help you deal with your ancestors, so when you're greeting them, they will get some sips of sake first, and only if you don't have any sake left, your life force will be drained.",
+            "You are progressing down the realm of the dead by entering gates spread over the area. But if your destiny was to fail, you won't find any further gates and stay there forever.",
+            "But stay brave on your quest. Thus this legend wouldn't exist if not for the one who got back from the realm of the dead and passed it along.",
+            "<b>Screen</b>",
+            "Starting from the top-left of the screen, you see:",
+            "<ul><li>a number of your ancestors left you have to greet on your path</li><li>life energy remaining</li><li>sips of sake, each bottle contains 7 samurai-sized sips of sake</li><li>on greeting your ancestors, drain points are displayed, if you don't have any sips of sake left, this amount of points will be drained from your life force</li></ul>",
+            "Action screen contains:",
+            "<ul><li>your owl character starting always from the top-left part of the screen</li><li>white walls you cannot pass through</li><li>purple skulls of your ancestors</li><li>blue bottles of sake</li><li>brown gates to different parts of the realm of the dead</li></ul>",
+            "<b>Controls</b>",
+            "Use WASD keys on the keyboard to control your owl character in four directions. To greet your ancestors or collect bottles of sake or go through gates simply move there.",
+            "When the game is finished, you can play it again just by typing:",
+            "RUN:",
+            "<i>note the colon character at the end which separates command from the characters following it</i>",
+            "To restart the game, just use RUN STOP key to halt the program execution and run the game again."
+        ] },
+        { "type":"source", "title":"Mindreader", "author":"By David Youd", "url":"https://bunsen.itch.io/mindreader-by-david-youd", "source":"10lines_mindreader.bas", "article":[
+            "The Mindreader will shuffle a deck of cards, and then lay out three rows of nine cards.  The player selects one of the cards in secret, and then tells the program which of the three rows contains the secret card.  This is done by pressing \"1\", \"2\", or \"3\".  Two additional times, the cards will be shuffled, laid out in rows, and the player will indicate which row contains their chosen card.  The Mindreader will then reveal the player's selection, using 8-bit clairvoyance!"
+        ] },
+        { "type":"source", "title":"Mines64", "author":"By Fabrizio Caruso", "url":"https://github.com/Fabrizio-Caruso/CBM-BASIC-10-liners/tree/master/C64/Mines64", "source":"10lines_mines.bas", "article":[
+            "The mine field:",
+            "You are in a minefield where mines appear both",
+            "<ul><li>under your feet once you move and</li><li>around you (more if you do not move)</li></ul>",
+            "You can clear the area around you with anti-mine charges but you can only carry a maximum of 9.",
+            "You can obtain extra charges by reaching a \"$\" that appear at random positions on the screen.",
+            "The field has upper and lower borders that kill you if reached. Left and Right border wrap arround (as text would on the screen).",
+            "The rate of mines appearing around you, increases continuously.",
+            "Points:",
+            "<ul><li>Walk into an empty position: 1 point</li><li>Walk into a charge \"$\": 5 points</li></ul>",
+            "Goals:",
+            "<ul><li>Reach the highest score possible by walking on empty positions or collecting charges \"$\"</li><li>Avoid stepping on mines or the upper and lower borders.</li><li>Reach the next 100 points to get a full recharge of your anti-mine charges</li></ul>",
+            "Controls:",
+            "<ul><li>Use I J K L to move</li><li>Use SPACE to clear nearby area (if you have enough charges)</li></ul>"
+        ] },
+        { "type":"source", "title":"Obstacle Ski", "author":"By Kimono", "url":"https://bunsen.itch.io/obstacle-ski-by-kimono", "source":"10lines_obstacleski.bas", "article":[
+            "The goal of this game is to dodge the obstacles on the ski slope.",
+            "Each time you hit an obstacle, the number of falls increases and the border color change.",
+            "If you fall more than 5/6 times, the game ends and the time when you descend and the previous one is indicated. After a few seconds the game starts all over again."
+        ] },
+        { "type":"source", "title":"PETSCII Artist", "author":"By Logiker", "url":"https://bunsen.itch.io/petscii-artist-by-logiker", "source":"10lines_petsciiartist.bas", "article":[
+            "<b>DESCRIPTION</b>",
+            "PETSCII Artist helps you to create real PETSCII art. You can select between predefined objects and an advanced mode, where you can set many options on your own.",
+            "<b>HOW TO USE</b>",
+            "Select if you want to create predefined objects or if you want to use advanced options by entering 1 or 2.",
+            "If you selected predefined objects you have six choices. Select one of them.",
+            "After you selected one of these options you will get your piece of PETSCII art."
+        ] },
+        { "type":"source", "title":"RACE4YOURLIFE", "author":"By SEGLabs", "url":"https://gkanold.wixsite.com/homeputerium/gameslist2019", "source":"10lines_race4yourlife.bas", "article":[
+            "Entry in the EXTREM-256 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Robots 64", "author":"By Fabrizio Caruso", "url":"https://bunsen.itch.io/robots-64-by-fabrizio-caruso", "source":"10lines_robots.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2021)"
+        ] },
+        { "type":"source", "title":"Sokoban", "author":"Johan Berntsson", "url":"https://bunsen.itch.io/sokoban-by-johan-berntsson", "source":"10lines_sokoban.bas", "article":[
+            "Sokoban is a puzzle video game genre in which the player pushes diamonds around in a warehouse, trying to get them to marked storage locations.",
+            "You move the player tile with the a,s,w and d keys. If you need to restart you push run/stop (or escape if using an emulator) and \"run\" the program again."
+        ] },
+        { "type":"source", "title":"Star Pads", "author":"By Arturo Dente", "url":"https://bunsen.itch.io/star-pads-by-arturo-dente", "source":"10lines_starpads.bas", "article":[
+            "In a hypothetical Star Wars multiverse you are a Jedi that can prevent Death Star to destroy Alderaan. In order to avoid this tragedy you have to defeat the guardian Sith in a lightsaber duel, trying to hit an energy ball with your lightsaber and launching it behind the enemy. He will do the same, of course. Depending on where the ball goes, the verdict.",
+            "The Sith enemy is more trained than you, you are a little more than an apprentice (like Luke when challenging Darth Vader), so he can use some Force power to confuse you.",
+            "This is the most difficult part of this Pong game: when the ball is on enemy's side, he can invert your commands on the paddle, so up becomes down and down becomes up.",
+            "When he is using this power, the screen frame turns to white and an \"I\" appears in the top middle of the screen.",
+            "That's all, use the Force!+"
+        ] },
+        { "type":"source", "title":"Taxi Taxi", "author":"By romwer", "url":"https://bunsen.itch.io/taxi-taxi-by-romwer", "source":"10lines_taxitaxi.bas", "article":[
+            "Taxi business got so much harder! Uber, Lyft, Curb and many other new transportation services flooded the streets. How can you compete? That's right! To be ahead of your rivals, your cab needs to be with your potential customers BEFORE they even know that they need a ride. So look out for the one exhausted citizen who remains completely still and race there to offer your service before anyone else. Then drive your passenger home safely. But beware of picking up the wrong person who still eventually moves, since this would mean a taxi service policy violation and immediate termination of your business!",
+            "<b>Task and Goal</b>",
+            "When you start the game you see part of a city from a bird view with 9 buildings surrounded by streets and busy business men and women.",
+            "Check the moving citizens (dots) and spot the one person who does remain still over a longer time. Drive your cab (square) as fast as you can to that location and drive over that dot for the pick up. Then take the passenger to the building where the arrow points to. Repeat this 9 times to win the game.",
+            "If you accidentally run over any other (active) citizen then the game is immediately over and you return to title screen. Good luck!",
+            "Note: If you manage to win the game you see the elapsed time at the top. Do you think you or your friends can go any faster than that?",
+            "<b>Control</b>",
+            "Use Joystick in Port 2 for moving your cab in all four directions",
+            "Fire button to start the game"
+        ] },
+        { "type":"source", "title":"Teng", "author":"By Emanuele Bonin", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_teng.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Tenrex", "author":"By Arturo Dente", "url":"https://gkanold.wixsite.com/homeputerium/games-list-2020", "source":"10lines_tenrex.bas", "article":[
+            "Entry in the PUR-80 category at BASIC 10 Liner Contest (2020)"
+        ] },
+        { "type":"source", "title":"Thief64", "author":"By Fabrizio Caruso", "url":"https://github.com/Fabrizio-Caruso/CBM-BASIC-10-liners/tree/master/NOMAM2019/Thief64", "source":"10lines_thief64.bas", "article":[
+            "You are a thief chased by 8 guards.",
+            "The guards use a non-trivial (pseudo-intelligent) strategy that depends on both you absolute position",
+            "and your relative position with respect to the guards.",
+            "You must steal dollars \"$\" that appear at the center of the screen.",
+            "As the game starts and you move on the screen, the guards will appear and start chasing you.",
+            "You can stun the guards for a few seconds by using your stunning bombs (you only have 9).",
+            "You must avoid the guards and not touch the wall.",
+            "Every other 4 stolen \"$\", the side borders will shrink and make your life harder.",
+            "<b>SCORE</b>",
+            "1 point per stolen \"$\"",
+            "<b>CONTROLS</b>",
+            "Use: I J K L to move",
+            "USE: SPACE to stun the guards"
+        ] },
+        { "type":"source", "title":"Torpedo Boat Commander", "author":"By Fredrik Ramsberg", "url":"https://microheaven.com/10liners/tbc/", "source":"10lines_torpedoboatcommander.bas", "article":[
+            "You are the commander of a small torpedo boat on a river in the jungle. Your mission is to get the attention of the enemy, by going as far as possible up the river, while other forces launch a secret attack elsewhere. Unforunately, there are lots of mines in the water, which can blow your boat to smithereens.",
+            "Apart from avoiding the mines, you can also shoot them using your torpedoes. However, you only have three torpedo tubes. Whenever you have fired a torpedo, your crew will start loading a new torpedo, but this takes a while. A torpedo will make all mines in its path explode, until it runs out of fuel. Then it will stop and lay still in the water, forming an obstacle in itself."
+        ] },
+        { "type":"source", "title":"We built 10city", "author":"", "url":"https://bunsen.itch.io/we-built-10city-by-arturo-dente", "source":"10lines_webuilt10city.bas", "article":[
+            "You are an old man tired to watch the build sites. Taken your blue pills you can feel a new power into your body and you get the control of a tower crane to build a palace.",
+            "Unlikely, your eyes are not the ones of a time anymore, and you have to move the crane safely in order to drop the builing blocks on the stack without making them fall on the ground.",
+            "The stack waves from a side to the other - perhaps that blue pills have some collateral effect - so move the block left/right and - when ready - let it drop and cross the fingers that it centers the stack!",
+            "<b>How to play</b>",
+            "press space to start a game",
+            "joystick in port 2 to move the block left/right and fire to let it drop."
+        ] },
+        { "type":"source", "title":"The Best Program Ever!", "author":"By ParadigmTheGreat", "url":"https://www.lemon64.com/forum/viewtopic.php?t=61707", "source":"c64_flashy.bas", "article":[
+            "I wrote this revolutionary and cutting-edge program with love.",
+            "Hope you enjoy!"
+        ] },
+        { "type":"source", "title":"Mirror Horror", "url":"https://www.c64brain.com/basic-programming/commodore-64-basic/", "source":"c64_mirrorhorror.bas", "article":[
+            "Your cannon (blue character) is placed in a maze among monsters (red characters). You can use the Z and X keys to control the mirror. The main objective is to kill as many monsters, which is accomplished by lining up the mirrors to meet the monsters in a path.",
+            "Key Controls:",
+            "z = Pick up a Mirror.",
+            "x = Put down a Mirror",
+            "Arrow keys = Move your Player",
+            "Space bar = shoot at a monster"
+        ] },
+        { "type":"source", "title":"Car Race Random Outcome", "url":"https://www.c64brain.com/basic-programming/commodore-64-basic/", "source":"c64_carrace.bas", "article":[
+            "Watch as they drive across the screen one by one, line up, and then the space bar starts the race and see who wins!"
+        ] },
+        { "type":"source", "title":"Snake", "author":"By LordFisch", "url":"https://www.reddit.com/r/c64/comments/9clf8m/i_finished_my_first_c64_game_in_basic_a_simple/", "source":"c64_snake.bas", "article":[
+            "Here is the full code of my simple snake clone. It was written in CBM prg Studio, so if you use any other IDE you may have to change the screen codes.",
+            "Right now the performance gets worse the longer the snake gets. The reason for this is the loop in line 2080 as I'm using an array based approach for keeping track of the snake. In any other programming language I would use a List, which would mean that I would always only have to access two list items."
+        ] },
+        { "type":"source", "title":"Digital Clock", "author":"By C64Wiki", "url":"https://www.c64-wiki.com/wiki/TIME$", "source":"c64wiki_clock.bas", "article":[
+            "The updated time is shown at the upper, left corner on the screen."
+        ] },
+        { "type":"source", "title":"RND(0) and RND(1)", "author":"By C64Wiki", "url":"https://www.c64-wiki.com/wiki/RND", "source":"c64wiki_randomtest.bas", "article":[
+            "This program shows the difference between RND(0) and RND(1).",
+            "1000 asterisks will be generated for RND(0), after this has finished press any key to start RND(1)."
+        ] },
+        { "type":"source", "title":"Restore", "author":"By C64Wiki", "url":"https://www.c64-wiki.com/wiki/RESTORE_(BASIC)", "source":"c64wiki_restore.bas", "article":[
+            "The BASIC command RESTORE (not to be confused with the RESTORE key) is used to clear the pointer of the next data value. The next read data value will be the first data value."
+        ] },
+        { "type":"source", "title":"Sprite", "author":"By C64Wiki", "url":"https://www.c64-wiki.com/wiki/Sprite", "source":"c64wiki_sprites.bas", "article":[
+            "This BASIC program demonstrate a few sprite options of three sprites (multicolor and standard/uni-color). The REM-lines are only used for remarks (also with the REM command the BASIC lines are too long!). The variable V contains the start adress of VIC-II."
+        ] },
+        { "type":"source", "title":"Sprites example", "author":"By Retro64", "url":"https://retro64.altervista.org/blog/programming-sprites-the-commodore-64-simple-tutorial-using-basic-v2/", "source":"c64wiki_whitesprite.bas" }        
+    ]
+}

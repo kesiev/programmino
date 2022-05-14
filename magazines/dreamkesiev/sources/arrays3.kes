@@ -1,0 +1,28 @@
+V=3
+PRINT "V IS = ";V
+
+DIM V(5,5)
+V(2,5)=100
+PRINT "V IS 3 = ";V
+PRINT "V 2,5 IS 100 = ";V(2,5)
+
+V=999
+PRINT "V IS 999 = ";V
+PRINT "V 2,5 IS 100 = ";V(2,5)
+
+V(2,3)="VALUE"
+PRINT "V IS 999 = ";V
+PRINT "V 2,3 IS VALUE = ";V(2,3)
+PRINT "V[2][3] IS VALUE = ";V[2][3]
+
+V[2][3]="HELLO"
+PRINT "V[2][3] IS HELLO = ";V[2][3]
+PRINT "V 2,3 IS HELLO = ";V(2,3)
+PRINT "V 2 IS Array = ";V(2)
+PRINT "V[2] IS Array = ";V[2]
+
+V[2]="FOOBAR"
+PRINT "V[2] IS FOOBAR = ";V[2]
+PRINT "V 2 IS FOOBAR = ";V(2)
+PRINT "V 2,5 IS undefined = ";V(2,5)
+PRINT "V[2][5] IS undefined = ";V[2][5]

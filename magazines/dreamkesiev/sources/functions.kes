@@ -1,0 +1,8 @@
+function fn(a,b) { return a+b}
+a=function(a){return a}
+print "Calling anonymous function: ";a("ciao")
+print "Calling named function: ";fn(3,5)
+function greet(a,b) {
+    return "Hello "+a+", I'm "+b
+}
+print "Calling another named function: ";greet("You","your computer")

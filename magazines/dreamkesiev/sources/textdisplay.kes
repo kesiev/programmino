@@ -1,0 +1,15 @@
+x=40
+y=12
+
+setcharat x,y,65
+setbgcolorat x,y,10
+setfgcolorat x,y,12
+setinverseat x,y,true
+setflashat x,y,true
+
+print "At ";x;",";y
+print "Character is: ";getcharat x,y;" (";chr$(getcharat x,y);")"
+print "Background color is: ";getbgcolorat x,y
+print "Foreground color is: ";getfgcolorat x,y
+print "Inverse is: ";getinverseat x,y
+print "Flash is: ";getflashat x,y

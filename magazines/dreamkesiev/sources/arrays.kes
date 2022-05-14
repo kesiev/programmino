@@ -1,0 +1,17 @@
+function greet(a,b) {
+    return "Hello "+a+", I'm "+b
+}
+
+a=[,1,,3,"hello",(3*2)=6,[4,5],function(a) {
+    return "I'm an inline function: "+a
+},,]
+print "Created a mixed array:"
+for (i=0;i<len(a);i++)
+    print " \\_ At ";i;": ";a[i]
+print "Calling anonymous function in array: ";a[7]("From array")
+print "Setting an anonymous function to 8th array position."
+a[8]=greet
+print " \\_ Calling it: ";a[8]("Another one","The System")
+z=[]
+print "An empty array length: ";len(z)
+print "Anonymous array with length of 2: ";len([,])

@@ -1,0 +1,6 @@
+a=(1==1?"Yes":"No")+" we are!"
+print "Ternary: ";a
+print "Inline ternary: ";"These are nice ";a=="No"?"Dogs":"Cats";", isn't it?"
+b=2*3>6?10:20
+print "Math ternary: ";b
+print "Nested ternary: ";a=="Yes"?"No":10%2==0?"I'm here":"Not here"

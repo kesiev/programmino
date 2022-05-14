@@ -1,0 +1,39 @@
+dim arr2(2,2)
+arr2[0][0]="ciao"
+arr=[
+    [1,
+    2],
+    [3,4],
+    function() {
+        return "hello from function in array"
+    },
+    {
+        c:"subvalue"
+    }
+]
+a={
+    b:
+    100,
+    c:[
+        1,2,3
+    ],
+    f:function(a,b) {
+        return a*b
+    },
+    g:[
+        0,
+        {
+            c:99
+        }
+    ]
+}
+print "Array of arrays are not bidimensional arrays: ";arr(0,0)
+print "Array of arrays needs 2 getters of any type: ";arr[0][0]
+print "Array of arrays needs 2 getters of any type: ";arr(0)(0)
+print "Array may contain objects: ";arr[3].c
+print "Objects properties get by string: ";a["b"]
+print "Object properties get by property: ";a.b
+print "Function in object: ";a.f(3,2)
+print "Property in object subarray: ";a.g[1].c
+print "Function in object: ";a["f"](3,2)
+print "Function in array: ";arr[2]()

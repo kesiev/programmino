@@ -1,0 +1,67 @@
+function largePrint(text,dx,dy) {
+    palette=[15,14,6,6,14,15]
+    for (i=0;i<len(text);i++) {
+        letter=asc(mid$(text,i,1))
+        for (y=0;y<16;y++)
+            for (x=0;x<8;x++)
+                if (getfontbit(letter,x,y)) {
+                	px=dx+x+(i*8)
+                    py=dy+y
+                    setcharat(px,py,219);
+                    setcharat(px+1,py+1,177);
+                    setfgcolorat(px,py,palette[3+int(sin(px*py*.01)*3)])
+                }
+            
+   }
+}
+
+class BigText {
+	frame=0
+    render() {
+    	largePrint(this.text,this.x+sin(this.frame/10)*10,this.y+sin(this.frame/5)*3)
+    }
+    frame() {
+    	this.frame++
+    }
+    BigText(text,x,y) {
+    	this.text=text
+        this.x=x
+        this.y=y
+    }
+}
+
+class Scroller {
+    position=0
+    frame=0
+    render() {
+        for (i=0;i<80;i++)
+            setcharat(i,20+sin(this.frame/10+i/10)*1.2,asc(mid$(this.text,this.position+i,1)))
+    }
+    frame() {
+    	this.frame++
+        if (this.frame%4 == 0) this.position=(this.position+1)%this.lentext
+    }
+    Scroller(text) {
+        this.text = spc(80)+text+spc(80)
+        this.lentext = len(this.text)
+    }
+}
+
+
+setopspertick(80000)
+
+faces = chr$(2)+" "+chr$(2)+" "+chr$(2)
+scroller= new Scroller(faces+" Hello! This is just you dreaming code so you don't have to worry! Many thanks in random order to all the people that directly and indirectly supported and inspired me coding random stuff: Bianca, Giuseppe Cottone, Phab!, Morpheus, Clara, NinJoe, il Kusagari, Valerio Barrila, Giuseppe Valenti, Fabio Maffioletti, Flavio Ricci, Otilio Forlanelli, Lucio Maitti, Daniele Natali, Pasquale Ambrosini, Giulio Caperdoni, JMarquis, Gaia, Nicoletta, Arnaldo, Bruno, Marco Taddei, Adem Xhaferi, Sgananzium, TeOoh!, Alkyla, Darwin Kastle, Sergio Brenna, Sergio Brenna Jr, Rosalia, Stefano Caroli, Massimo Emmanuele, Romolo Camplani, FrankBro, StaggerLee, PeterPiers, Marianne Waage, Preuk, Sam Marcus, Beeptest, SuppJapan, CourtJus. Byez! "+faces)
+bigtext = new BigText("DREAM",20,2)
+border 3
+background 3
+ink 0
+
+frame:
+    cls
+    scroller.frame()
+    bigtext.frame()
+    scroller.render()
+    bigtext.render()
+    get key
+    goto frame

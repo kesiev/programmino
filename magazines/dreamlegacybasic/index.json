@@ -1,0 +1,49 @@
+{
+    "shortTitle":"Dream Legacy Basic",
+    "title":"Dream Legacy Basic",
+    "year":2021,
+    "sourcesRoot":"sources",
+    "sourcesPackages":">dream-legacybasic",
+    "pages":[
+        { 
+            "type":"cover",
+            "title":"Cover",
+            "style":"background: rgb(46,199,132);background: radial-gradient(circle, rgba(46,199,132,1) 0%, rgba(22,32,107,1) 100%);",
+            "elements":[
+                {
+                    "type":"top",
+                    "style":"font-family:'Keypunch029Regular';color:#fff",
+                    "text":"From all around the internet"
+                },{
+                    "type":"title large",
+                    "style":"font-family:'Web IBM VGA 8x16';color:#000;text-shadow:0px -10px 0px #fff",
+                    "text":"Dream Legacy Basic"
+                },{
+                    "type":"subtitle large",
+                    "style":"background-color:#fff;box-shadow:0px -10px 0px #000;font-family:'Keypunch029Regular'",
+                    "text":"A collection of Programmino-compatible BASIC games"
+                },{
+                    "type":"footer",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;border-top:5px solid rgba(255,255,255,0.3)",
+                    "text":"2022"
+                }
+            ]
+        },
+        { "type":"firstpage", "title":"Introduction", "subtitle":"Dead Languages", "author":"KesieV", "article":[
+            "In high school, the programming language I used the most to breathe life into boring phone books, clunky ticket machines, and sketchy calculators was the Borland Pascal. My father taught me the ropes of computer programming when I was a little kid using the Commdore 64 and ZX Spectrum BASIC programming language, so I wasn't unaware of coding. My hobby of programming stuff for myself is very long-standing and, at that time, I decided to spend that \"extra time\" from school to learn some Assembly from some obscure text files I've found in some of my friend's disks to add some tricks and sparkles to my Pascal videogames and tools.",
+            "Eventually, the years at the technical institute ended and I never met these languages again. Some BASIC and Pascal programs are still floating around the web as lost historical artifacts of the languages we used to learn the art.",
+            "Programmino understands just a very tiny bit of Pascal but knows more about BASIC via the <span class='code'>dream-legacybasic</span> package. I'm collecting here some of the lost artifacts I've found around that Programmino is able run."
+        ], "references":[
+            {
+                "description":"When available, the original program source can be reached by hitting the \"Read more...\" button."
+            }
+        ] },
+        { "type":"toc", "title":"Table of Contents" },
+        { "type":"source", "title":"Eliza", "author":"By Danielson and Paul Hashfield", "url":"https://gitlab.com/konyisoft/swbasic/-/blob/master/src/examples.js", "source":"swbasic2_eliza.bas" },
+        { "type":"source", "title":"Zero!", "url":"https://gitlab.com/konyisoft/swbasic/-/blob/master/src/examples.js", "source":"swbasic2_guessnumber.bas" },
+        { "type":"source", "title":"Hello", "author":"By konyisoft, modified by KesieV.", "url":"https://swbasic2.konyisoft.eu/", "source":"swbasic2_hello.bas", "article":[
+            "During Programmino early development I used the Konyisoft BASIC interpreter online demo to validate programs' output. It has been a really helpful tool so I'm leaving a small tribute here: one of its demo programs with some labels changed, as the technical institute students used to do when copying homework.",
+            "&dash; KesieV"
+        ] }
+    ]
+}

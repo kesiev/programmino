@@ -1,0 +1,22 @@
+for (
+    i=0;
+        i
+            <
+                20
+            ;
+        i
+    +=
+0.25
+    )
+        print spc(
+	                28
+    	        +
+    	    sin(
+            i
+        )
+    *
+28
+);"It was just a dream";i%2?
+    "."
+        :
+            "?"

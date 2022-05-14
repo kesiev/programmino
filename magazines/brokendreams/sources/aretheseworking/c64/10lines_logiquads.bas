@@ -1,0 +1,10 @@
+0 f$="{rvon}WW{down}{left}{left}JK":poke53280,0:poke53281,0:m=55499:l=5:dimd(260):d(87)=-120:d(83)=120
+1 d(65)=-3:d(68)=3:dimr(260):r(87)=1:r(83)=4:r(65)=2:r(68)=3:print"{wht}{clr}{rvon}{$4c}{$4f}{$47}{$49}{rvof}{$51}{$55}{$41}{$44}{$53}{$20}";
+2 g=20:p$="{$0d}{up}{$20}{$20}{$20}{$20}{$20}{$0d}{up}":print"{red}SSSSS{wht}{$0d}{$0d}{rght}{rght}{rght}"f$"{$0d}{down}"f$"{up}{rght}{gry3}"f$"{wht}{up}{rght}"f$"{$0d}{down}{rght}{rght}{rght}"f$"{$0d}"
+3 f=int(rnd(0)*4):c=4+int(rnd(0)*4):a=m-f*(f<2)-(f-2)*(f>1)-40*(f>1):pokea,c:t=0:e=0
+4 t=t+1:geta$:e=d(asc(a$+"{$20}")):on-(e<>0ork=5)goto5:on-(t<g)goto4:k=k+1:t=0:print"{CBM-+}";:goto4
+5 k=0:h=0:pokea,15:if(peek(a+e)and15)>1thenl=l-1:poke1034+l,32:on-(l=0)goto9:print,p;p$;:goto3
+6 fori=0to3:h=h-((peek(m+e+i+2*(i>1)+40*int(i/2))and15)=c):next:p=p+10*3^h:print,p;p$;
+7 pokea+e,c:r=r(asc(a$)):a(r)=a(r)+1:g=g-0.2
+8 on-(a(r)<4)goto3:pokem+e,1:pokem+e+1,1:pokem+e+40,1:pokem+e+41,1:a(r)=0:goto3
+9 print"{$0d}{down}{down}{$47}{$41}{$4d}{$45}{$20}{$4f}{$56}{$45}{$52}":input"{down}{$54}{$52}{$59}{$20}{$41}{$47}{$41}{$49}{$4e}";x$:ifx$="{$59}"thenrun

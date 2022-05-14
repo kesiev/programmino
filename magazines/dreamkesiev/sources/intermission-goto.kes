@@ -1,0 +1,15 @@
+10 print "This is my place"
+20 for i=0 to 5
+30 print i
+40 if i=2 goto 70
+45 if i=3 gosub 1000
+46 if i=4 goto 2000
+50 print "OK, my value is now ";i;"."
+60 print "Value ";i;" done. To the next one, then."
+70 next i
+80 print "Is this the end?"
+90 END
+1000 print "Promise, I'll be back."
+1010 return
+2000 print "That world is no more. But what if I could go back..."
+2010 goto 50

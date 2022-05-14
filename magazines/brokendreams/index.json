@@ -1,0 +1,76 @@
+{
+    "shortTitle":"Broken",
+    "title":"Broken Dreams",
+    "sourcesRoot":"sources",
+    "pages":[
+        { 
+            "type":"cover",
+            "title":"Cover",
+            "style":"background:rgb(17,81,53);background: linear-gradient(90deg, rgba(17,81,53,1) 0%, rgba(107,68,22,1) 100%);overflow:hidden",
+            "elements":[
+                {
+                    "type":"top",
+                    "style":"color:#fff;font-family:'Keypunch029Regular'",
+                    "text":"Broken Dreams"
+                },{
+                    "type":"title",
+                    "style":"transform: rotate(-90deg);padding:0;margin:0;width:800px;position:absolute;left:-300px;top:510px;text-align:right;font-family:'Keypunch029Regular';color:#fff",
+                    "text":"Broken Dreams"
+                },{
+                    "type":"subtitle",
+                    "style":"left:-10px;right:-10px;background-color:#fff;color:#3d3b3c;font-family:'Web IBM VGA 8x16';margin-left:0;margin-right:0;padding:10px 30px;transform: rotate(-3deg)",
+                    "text":"A collection of Programmino-incompatible programs"
+                },{
+                    "type":"footer",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;border-top:1px solid #fff",
+                    "text":"&copy; 2022 by KesieV Norimaki"
+                }
+            ]
+        },
+        { "type":"firstpage", "title":"Introduction", "subtitle":"What Am I", "author":"KesieV", "article":[
+            "The hardest past of the Programmino project has been finding a homogeneous definition of what it was.",
+            "By design, it's an attempt of implementing a machine I've seen in my dreams.",
+            "Technically, it's a configurable code interpreter tied up with some hardware simulations, like the screen, the memory, and so on.",
+            "Practically, it's a simple IDE with a magazine viewer.",
+            "But what's its purpose? The design choices allow you to code as you shouldn't on purpose. The technical compromises made it unable to run some programs. The practical minimalism made it a toy. So what do I expect you to use this thing?",
+            "After thinking about that for a while, I decided to give up. I'm leaving one of my dreams in this code. I'm leaving its broken stuff in this magazine.",
+            "A cryptic painting that's perhaps missing a piece."
+        ]},
+        { "type":"toc", "title":"Table of Contents" },
+
+        { "type":"firstpage", "title":"Are these working?", "article":[ "Thee following programs runs probably okay... but they're a little too obscure to check if they are running correctly." ] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"basketball.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_07_basketball.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"battle.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_09_battle.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"blackjack.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_10_blackjack.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"bounce.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_13_bounce.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"hockey.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_49_hockey.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"life.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_55_life.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"lifefortwo.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_56_lifefortwo.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"mugwump.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_62_mugwump.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"orbit.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_68_orbit.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"queen.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_72_queen.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"roulette.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_75_roulette.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"salvo.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_77_salvo.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"stockmarket.bas", "source":"aretheseworking/basiccomputergames/basiccomputergames_83_stockmarket.bas", "article":[ "From the BASIC Computer Games book."] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"breadofhanoi.bas", "source":"aretheseworking/c64/10lines_breadofhanoi.bas", "article":[ "From 10 Liner Contest (C64)." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"liferaft.bas", "source":"aretheseworking/c64/10lines_liferaft.bas", "article":[ "From 10 Liner Contest (C64)." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"logitrumps.bas", "source":"aretheseworking/c64/10lines_logitrumps.bas", "article":[ "From 10 Liner Contest (C64)." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"logiquads.bas", "source":"aretheseworking/c64/10lines_logiquads.bas", "article":[ "From 10 Liner Contest (C64)." ] },
+
+        { "type":"firstpage", "title":"Incomplete", "article":[ "The following programs are not perfectly running due to incomplete Programmino implementations." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"tendrive.bas", "source":"incomplete/c64/10lines_tendrive.bas", "article":[ "From 10 Liner Contest (C64). This game is super cool but since the C64 text screen is not correctly implemented, the score goes one row down." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"mas10mind.bas", "source":"incomplete/c64/10lines_mas10mind.bas", "article":[ "From 10 Liner Contest (C64). Since the C64 text screen is not correctly implemented, the selected pin offset is wrong." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"highwayhoppers.bas", "source":"incomplete/c64/10lines_highwayhoppers.bas", "article":[ "From 10 Liner Contest (C64). Since the C64 text screen is not correctly implemented, the whole game is broken." ] },
+
+        { "type":"firstpage", "title":"Not working", "article":[ "The following programs are not running at all due to incompatibility on how Programmino works or to large missing implementations (often hardware-specific)." ] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"animal.bas", "source":"notworking/basiccomputergames/basiccomputergames_03_animal.bas", "article":[ "From the BASIC Computer Games book." ] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"checkers.bas", "source":"notworking/basiccomputergames/basiccomputergames_23_checkers.bas", "article":[ "From the BASIC Computer Games book." ] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"hexapawn.bas", "source":"notworking/basiccomputergames/basiccomputergames_46_hexapawn.bas", "article":[ "From the BASIC Computer Games book." ] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"lunar.bas", "source":"notworking/basiccomputergames/basiccomputergames_59_lunar.bas", "article":[ "From the BASIC Computer Games book." ] },
+        { "type":"source", "sourcesPackages":">dream-legacybasic", "title":"king_variable_update.bas", "source":"notworking/basiccomputergames/basiccomputergames_53_king_variable_update.bas", "article":[ "From the BASIC Computer Games book." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"labyrinthen.bas", "source":"notworking/c64/10lines_labyrinthen.bas", "article":[ "From 10 Liner Contest (C64)." ] },
+        { "type":"source", "sourcesPackages":">dream-64", "title":"blackjack.bas", "url":"http://kingroman.com/c64/Blackjack2019.pdf", "source":"notworking/c64/c64_blackjack.bas" },
+        { "type":"source", "sourcesPackages":">dream-zx", "title":"net_boggle.bas", "source":"notworking/zx/zx_net_boggle.bas" }
+
+    ]
+}

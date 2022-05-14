@@ -1,0 +1,10 @@
+1 v=53248:q=54272:fori=1to6:readn,a,d,w:poke12288+3*i,n:pokev+a,d:pokeq+7-i,w
+2 next:f=200:data96,,50,200,248,33,,97,255,29,1,17,199,39,7,,255,21,1,,62,32,,
+3 print"{wht}{clr}":poke2040,192:l=15:b=1063:r=q+24:fori=0to63:poke1024+rnd(1)*l*40,46
+4 next:a=2:fori=0to2:readm$(i):next:data"W","V{left}{down}V","{left}NM{left}{left}{down}MN":x$="{home}":fori=0tol
+5 x$=x$+"{rght}"+chr$(20)+"{down}":next:x$=x$+"astro{rght}m,k,z:{rght}score/ammo":y=1030:poke650,128
+6 printx$p,a:pokeb+40*int(l*rnd(1)),46:geta$:h=h+(a$="k"andh>0)-(a$="m"andh<l)
+7 ifrnd(1)<p/fthenpoke211,38:poke214,l*rnd(1):sys58732:print"{brn}"m$(3*rnd(1))"{wht}";
+8 ifa$="z"andathena=a-1:fori=1to34:poker,i*6:t=y+h*40+i:poket,67:poket-1,32:next
+9 poker,15:pokev+1,50+h*8:c=peek(1028+h*40):ifc=32orc=46thenpoker,0:p=p+1:goto6
+10 print"{home}crash";:pokeq+1,40:pokeq+5,0:pokeq+4,129:pokeq+4,128:wait198,1:run

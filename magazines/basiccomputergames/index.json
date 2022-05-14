@@ -1,0 +1,472 @@
+{
+    "shortTitle":"BASIC Computer Games",
+    "title":"BASIC Computer Games",
+    "sourcesRoot":"sources",
+    "sourcesPackages":">dream-legacybasic",
+    "pages":[
+        { 
+            "type":"cover",
+            "title":"Cover",
+            "style":"background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);",
+            "elements":[
+                {
+                    "type":"top",
+                    "style":"font-family:'AleoRegular';background:#fff;border-bottom: 2px solid #3d3b3c",
+                    "text":"From the 1973 book BASIC Computer Games"
+                },{
+                    "type":"title",
+                    "style":"font-family:'YoungSerifRegular';color:#fff",
+                    "text":"BASIC Computer Games"
+                },{
+                    "type":"subtitle",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;border-top:1px solid #fff;padding-top:20px",
+                    "text":"A collection of Programmino-compatible BASIC games"
+                },{
+                    "type":"footer",
+                    "style":"font-family:'AleoRegular';color:#fff",
+                    "text":"Code and articles from the David H. Ahl BASIC Computer Games and the Coding Horror updating project"
+                }
+            ]
+        },
+        { "type":"firstpage", "title":"Introduction", "author":"KesieV", "subtitle":"The 7 Years Gap", "article":[
+            "The BASIC Computer Games book, written in 1973 by David H. Ahl, introduced a lot of youngsters to the world of coding.",
+            "Too bad I had to wait 7 years. Well, not for that book to be delivered to my house: the Italian post services have never enjoyed a good reputation, but that would have been too much. I had to wait those years for actually being born.",
+            "Considering how fast the tech world goes - I've lost a good chunk of the gold age of computing and in a way, I always feel a little sorry for losing that chunk. Luckily my dad, even if living in Sicily, was into that stuff a lot and decided to transfer to northern Italy to play with those programmable machines. When I was 5 he started teaching me the basics of coding on a Commodore 64 and the code I've played with looked a lot like the one in this book.",
+            "The first thing I've done for Programmino is to make it compatible with some of the programs in that books, running that with IBM PC aesthetics - the computers my father was using at work when I was 5. These are the ones that are working. Enjoy!",
+            "Oh. Eventually, my family split in two and, even if my parents are always smiling and such, I have a hunch that both my mother and my father are deeply missing their motherland - may be regretting this brave pursuit of technology at any cost.",
+            "C'est la vie. They gifted me a dream."
+        ], "references":[
+            {
+                "description":"Games from the David H. Ahl book BASIC Computer Games",
+                "url":"http://www.vintage-basic.net/games.html"
+            },{
+                "description":"About the BASIC Computer Games book",
+                "url":"https://en.wikipedia.org/wiki/BASIC_Computer_Games"
+            },{
+                "description":"Includes normalized sources and articles transcriptions from the Coding Horror basic-computer-games project",
+                "url":"https://github.com/coding-horror/basic-computer-games"
+            }
+        ] },
+        { "type":"toc", "title":"Table of Contents" },
+        { "type":"source", "author": "By Bill Palmby of Prairie View, Illinois", "title": "Acey Ducey", "source": "basiccomputergames_01_aceyducey.bas", "article":[
+            "This is a simulation of the Acey Ducey card game. In the game, the dealer (the computer) deals two cards face up. You have an option to bet or not to bet depending on whether or not you feel the next card dealt will have a value between the first two.",
+            "Your initial money is set to $100; you may want to alter this value if you want to start with more or less than $100. The game keeps going on until you lose all your money or interrupt the program."
+        ] },
+        { "type":"source", "title": "Amazing", "author": "By Jack Hauber of Windsor, Connecticut", "source": "basiccomputergames_02_amazing.bas", "article":[
+            "This program will print out a different maze every time it is run and guarantees only one path through. You can choose the dimensions of the maze — i.e. the number of squares wide and long."
+        ] },
+        { "type":"source", "title": "Awari", "author":"Adopted from one originally written by Geoff Wyvill of Bradford, Yorkshire, England", "source": "basiccomputergames_04_awari.bas", "article":[
+            "When either side is empty, the game is finished. The player with the most beans in his home has won.",
+            "In the computer version, the board is printed as 14 numbers representing the 14 pits.",
+            "<div class='code'>    3   3   3   3   3   3<br>0                           0<br>    3   3   3   3   3   3</div>",
+            "The pits on your (lower) side are numbered 1-6 from left to right. The pits on my (the computer’s) side are numbered from my left (your right).",
+            "To make a move you type in the number of a pit. If the last bean lands in your home, the computer types ‘AGAIN?’ and then you type in your second move.",
+            "The computer’s move is typed, followed by a diagram of the board in its new state. The computer always offers you the first move. This is considered to be a slight advantage.",
+            "There is a learning mechanism in the program that causes the play of the computer to improve as it playes more games."
+        ] },
+        { "type":"source", "title": "Bagels", "author":"By D. Resek and P. Rowe of the Lawrence Hall of Science, Berkeley, California", "source": "basiccomputergames_05_bagels.bas", "article":[
+            "In this game, the computer picks a 3-digit secret number using the digits 0 to 9 and you attempt to guess what it is. You are allowed up to twenty guesses. No digit is repeated. After each guess the computer will give you clues about your guess as follows:",
+            "<ul><li>PICO One digit is correct, but in the wrong place</li><li>FERMI One digit is in the correct place</li><li>BAGELS No digit is correct</li></ul>",
+            "You will learn to draw inferences from the clues and, with practice, you’ll learn to improve your score. There are several good strategies for playing Bagels. After you have found a good strategy, see if you can improve it. Or try a different strategy altogether to see if it is any better. While the program allows up to twenty guesses, if you use a good strategy it should not take more than eight guesses to get any number."            
+        ] },
+        { "type":"source", "title": "Banner", "author":"By Leonard Rosendust of Brooklyn, New York", "source": "basiccomputergames_06_banner.bas", "article":[
+            "This program creates a large banner on a terminal of any message you input. The letters may be any dimension of you wish although the letter height plus distance from left-hand side should not exceed 6 inches. Experiment with the height and width until you get a pleasing effect on whatever terminal you are using."
+        ] },
+        { "type":"source", "title": "Batnum", "author":"By one of the two originators of the BASIC language, John Kemeny of Dartmouth College", "source": "basiccomputergames_08_batnum.bas", "article":[
+            "The game starts with an imaginary pile of objects, coins for example. You and your opponent (the computer) alternately remove objects from the pile. You specify in advance the minimum and maximum number of objects that can be taken on each turn. You also specify in advance how winning is defined:",
+            "<ol><li>To take the last object</li><li>To avoid taking the last object</li></ol>",
+            "You may also determine whether you or the computer go first.",
+            "The strategy of this game is based on modulo arithmetic. If the maximum number of objects a player may remove in a turn is M, then to gain a winning position a player at the end of his turn must leave a stack of 1 modulo (M+1) coins. If you don’t understand this, play the game 23 Matches first, then BATNUM, and have fun!"
+        ] },
+        { "type":"source", "title": "Battle", "author":"By Ray Westergard of Lawrence Hall of Science, Berkeley, California", "source": "basiccomputergames_09_battle.bas", "article":[
+            "BATTLE is based on the popular game Battleship which is primarily played to familiarize people with the location and designation of points on a coordinate plane.",
+            "BATTLE first randomly sets up the bad guy’s fleet disposition on a 6 by 6 matrix or grid. The fleet consists of six ships:",
+            "<ul><li>Two destroyers (ships number 1 and 2) which are two units long</li><li>Two cruisers (ships number 3 and 4) which are three units long</li><li>Two aircraft carriers (ships number 5 and 6) which are four units long</li></ul>",
+            "The program then prints out this fleet disposition in a coded or disguised format (see the sample computer print-out). You then proceed to sink the various ships by typing in the coordinates (two digits. each from 1 to 6, separated by a comma) of the place where you want to drop a bomb, if you’ll excuse the expression. The computer gives the appropriate response (splash, hit, etc.) which you should record on a 6 by 6 matrix. You are thus building a representation of the actual fleet disposition which you will hopefully use to decode the coded fleet disposition printed out by the computer. Each time a ship is sunk, the computer prints out which ships have been sunk so far and also gives you a “SPLASH/HIT RATIO.”",
+            "The first thing you should learn is how to locate and designate positions on the matrix, and specifically the difference between “3,4” and “4,3.” Our method corresponds to the location of points on the coordinate plane rather than the location of numbers in a standard algebraic matrix: the first number gives the column counting from left to right and the second number gives the row counting from bottom to top.",
+            "The second thing you should learn about is the splash/hit ratio. “What is a ratio?” A good reply is “It’s a fraction or quotient.” Specifically, the spash/hit ratio is the number of splashes divided by the number of hits. If you had 9 splashes and 15 hits, the ratio would be 9/15 or 3/5, both of which are correct. The computer would give this splash/hit ratio as .6.",
+            "The main objective and primary education benefit of BATTLE comes from attempting to decode the bas guys’ fleet disposition code. To do this, you must make a comparison between the coded matrix and the actual matrix which you construct as you play the game."
+        ] },
+        { "type":"source", "title": "Bombardment", "author":"Slightly modified from the original written by Martin Burdash of Parlin, New Jersey", "source": "basiccomputergames_11_bombardment.bas", "article":[
+            "BOMBARDMENT is played on two, 5x5 grids or boards with 25 outpost locations numbered 1 to 25. Both you and the computer have four platoons of troops that can be located at any four outposts on your respective grids.",
+            "At the start of the game, you locate (or hide) your four platoons on your grid. The computer does the same on it’s grid. You then take turns firing missiles or bombs at each other’s outposts trying to destroy all four platoons. The one who finds all four opponents’ platoons first, wins."
+        ] },
+        { "type":"source", "title": "Bombs Away", "author":"David Ahl modified the original program which was created by David Sherman while a student at Curtis Jr. High School, Sudbury, Massachusetts.", "source": "basiccomputergames_12_bombsaway.bas", "article":[
+            "In this program, you fly a World War II bomber for one of the four protagonists of the war. You then pick your target or the type of plane you are flying. Depending on your flying experience and the quality of enemy defenders, you then may accomplish your mission, get shot down, or make it back through enemy fire. In any case, you get a chance to fly again."
+        ] },
+        { "type":"source", "title": "Bowling", "author":"By Paul Peraino while a student at Woodrow Wilson High School, San Francisco, California", "source": "basiccomputergames_14_bowling.bas", "article":[
+            "This is a simulated bowling game for up to four players. You play 10 frames. To roll the ball, you simply type “ROLL.” After each roll, the computer will show you a diagram of the remaining pins (“0” means the pin is down, “+” means it is still standing), and it will give you a roll analysis:",
+            "<ul><li>GUTTER</li><li>STRIKE</li><li>SPARE</li><li>ERROR (on second ball if pins still standing)</li></ul>"
+        ] },
+        { "type":"source", "title": "Boxing", "author":"Jesse Lynch of St. Paul, Minnesota", "source": "basiccomputergames_15_boxing.bas", "article":[
+            "This program simulates a three-round Olympic boxing match. The computer coaches one of the boxers and determines his punches and defences, while you do the same for your boxer. At the start of the match, you may specify your man’s best punch and his vulnerability.",
+            "There are approximately seven major punches per round, although this may be varied. The best out if three rounds wins."
+        ] },
+        { "type":"source", "title": "Bug", "author":"By Brian Leibowitz, while in the 7th grade at Harrison Jr-Se High School in Harrison, New York", "source": "basiccomputergames_16_bug.bas", "article":[
+            "The object of this game is to finish your drawing of a bug before the computer finishes.",
+            "You and the computer roll a die alternately with each number standing for a part of the bug. You must add the parts in the right order; in other words, you cannot have a neck until you have a body, you cannot have a head until you have a neck, and so on. After each new part has been added, you have the option of seeing pictures of the two bugs.",
+            "If you elect to see all the pictures, this program has the ability of consuming well over six feet of terminal paper per run. We can only suggest recycling the paper by using the other side."
+        ] },
+        { "type":"source", "title": "Bullfight", "author":"David Sweet of Dartmouth wrote the original version of this program, modified by students at Lexington High School and finally by Steve North of Creative Computing", "source": "basiccomputergames_17_bullfight.bas", "article":[
+            "In this simulated bullfight, you are the matador — i.e., the one with the principle role and the one who must kill the bull or be killed (or run from the ring).",
+            "On each pass of the bull, you may try:",
+            "<ul><li>0: Veronica (dangerous inside move of the cape)</li><li>1: Less dangerous outside move of the cape</li><li>2: Ordinary swirl of the cape</li></ul>",
+            "Or you may try to kill the bull:",
+            "<ul><li>4: Over the horns</li><li>5: In the chest</li></ul>",
+            "The crowd will determine what award you deserve, posthumously if necessary. The braver you are, the better the reward you receive. It’s nice to stay alive too. The better the job the picadores and toreadores do, the better your chances."
+        ] },
+        { "type":"source", "title": "Bullseye", "author":"By David Ahl of Creative Computing", "source": "basiccomputergames_18_bullseye.bas", "article":[
+            "In this game, up to 20 players throw darts at a target with 10-, 20-, 30-, and 40-point zones. The objective is to get 200 points.",
+            "You have a choice of three methods of throwing:",
+            "<table><tr><th>Throw</th><th>Description</th><th>Probable Score</th></tr><tr><td>1</td><td>Fast overarm</td><td>Bullseye or complete miss</td></tr><tr><td>2</td><td>Controlled overarm</td><td>10, 20, or 30 points</td></tr><tr><td>3</td><td>Underarm</td><td>Anything</td></tr></table>",
+            "You will find after playing a while that different players will swear by different strategies. However, considering the expected score per throw by always using throw 3:",
+            "<table><tr><th>Score (S)</th><th>Probability (P)</th><th>S x P</th></tr><tr><td>40</td><td>1.00-.95 = .05</td><td>2</td></tr><tr><td>30</td><td>.95-.75 = .20</td><td>6</td></tr><tr><td>30</td><td>.75-.45 = .30</td><td>6</td></tr><tr><td>10</td><td>.45-.05 = .40</td><td>4</td></tr><tr><td>0</td><td>.05-.00 = .05</td><td>0</td></tr></table>",
+            "Expected score per throw = 18",
+            "Calculate the expected score for the other throws and you may be surprised!"
+        ] },
+        { "type":"source", "title": "Bunny", "source": "basiccomputergames_19_bunny.bas", "article": [
+            "Computer drawing of the Playboy bunny."
+        ] },
+        { "type":"source", "title": "Buzzword", "author":"By David Ahl", "source": "basiccomputergames_20_buzzword.bas", "article":[
+            "This program is an invaluable aid for preparing speeches and briefings about educational technology. This buzzword generator provides sets of three highly-acceptable words to work into your material. Your audience will never know that the phrases don’t really mean much of anything because they sound so great! Full instructions for running are given in the program."
+        ] },
+        { "type":"source", "title": "Calendar", "author":"By Geoffrey Chase of the Abbey, Portsmouth, Rhode Island", "source": "basiccomputergames_21_calendar.bas", "article":[
+            "This program prints out a calendar for any year. You must specify the starting day of the week of the year:",
+            "<ul><li>0: Sunday</li><li>-1: Monday</li><li>-2: Tuesday</li><li>-3: Wednesday</li><li>-4: Thursday</li><li>-5: Friday</li><li>-6: Saturday</li></ul>",
+            "You can determine this by using the program WEEKDAY. You must also make two changes for leap years. The program listing describes the necessary changes. Running the program produces a nice 12-month calendar."
+        ] },
+        { "type":"source", "title": "Change", "author":"By Dennis Lunder of People’s Computer Company", "source": "basiccomputergames_22_change.bas", "article":[
+            "In this program, the computer pretends it is the cashier at your friendly neighborhood candy store. You tell it the cost of the item(s) you are buying, the amount of your payment, and it will automatically (!) determine your correct change. Aren’t machines wonderful?"
+        ] },
+        { "type":"source", "title": "Chemist", "author":"By Wayne Teeter of Ridgecrest, California", "source": "basiccomputergames_24_chemist.bas", "article":[
+            "The fictitious chemical, kryptocyanic acid, can only be diluted by the ratio of 7 parts water to 3 parts acid. Any other ratio causes an unstable compound which soon explodes. Given an amount of acid, you must determine how much water to add to the dilution. If you’re more than 5% off, you lose one of your nine lives. The program continues to play until you lose all nine lives or until it is interrupted."
+        ] },
+        { "type":"source", "title": "Chief", "author":"By John Graham of Upper Brookville, New York", "source": "basiccomputergames_25_chief.bas", "article":[
+            "In the words of the program author, John Graham, “CHIEF is designed to give people (mostly kids) practice in the four operations (addition, multiplication, subtraction, and division).",
+            "It does this while giving people some fun. And then, if the people are wrong, it shows them how they should have done it."
+        ] },
+        { "type":"source", "title": "Chomp", "author":"By Peter Sessions of People’s Computer Company", "source": "basiccomputergames_26_chomp.bas", "article":[
+            "This program is an adaptation of a mathematical game originally described by Martin Gardner in the January 1973 issue of Scientific American. Up to a 9x9 grid is set up by you with the upper left square in a poison square. This grid is the cookie. Players alternately chomp away at the cookie from the lower right. To take a chomp, input a row and column number of one of the squares remaining on the cookie. All of the squares below and to the right of that square, including that square, disappear.",
+            "Any number of people can play — the computer is only the moderator; it is not a player. Two-person strategies are interesting to work out but strategies when three or more people are playing are the real challenge."
+        ] },
+        { "type":"source", "title": "Civil War", "author":"In 1968 by three Students in Lexington High School, Massachusetts: L. Cram, L. Goodie, and D. Hibbard. It was modified into a 2-player game by G. Paul and R. Hess of TIES, St. Paul, Minnesota", "source": "basiccomputergames_27_civilwar.bas", "article":[
+            "This simulation is based on 14 battles in the Civil War. Facts and figures are based on the actual occurrence. If you follow the same strategy used in the actual battle, the results will be the same. Generally, this is a good strategy since the generals in the Civil War were fairly good military strategists. However, you can frequently outperform the Civil War generals, particularly in cases where they did not have good enemy intelligence and consequently followed a poor course of action. Naturally, it helps to know your Civil War history, although the computer gives you the rudiments.",
+            "After each of the 14 battles, your casualties are compared to the actual casualties of the battle, and you are told whether you win or lose the battle.",
+            "You may play Civil War alone in which case the program simulates the Union general. Or two players may play in which case the computer becomes the moderator."
+        ] },
+        { "type":"source", "title": "Combat", "author":"By Bob Dores of Milton, Massachusetts", "source": "basiccomputergames_28_combat.bas", "article":[
+            "In this game, you are fighting a small-scale war with the computer. You have 72,000 troops which you first ust distribute among your Army, Navy, and Air Force. You may distribute them in any way you choose as long as you don’t use more than 72,000.",
+            "You then attack your opponent (the computer) and input which service and the number of men you wish to use. The computer then tells you the outcome of the battle, gives you the current statistics and allows you to determine your next move.",
+            "After the second battle, it is decided from the total statistics whether you win or lose or if a treaty is signed."
+        ] },
+        { "type":"source", "title": "Craps", "author":"By Steve North of Creative Computing. Based on an original which appeared one day on a computer at DEC", "source": "basiccomputergames_29_craps.bas", "article":[
+            "This game simulates the game of craps played according to standard Nevada craps table rules. That is:",
+            "<ol><li>A 7 or 11 on the first roll wins</li><li>A 2, 3, or 12 on the first roll loses</li><li>Any other number rolled becomes your “point.”</li><ul><li>You continue to roll, if you get your point, you win.</li><li>If you roll a 7, you lose and the dice change hands when this happens.</li></ul></ol>"
+        ] },
+        { "type":"source", "title": "Cube", "author":"By Jerimac Ratliff of Fort Worth, Texas", "source": "basiccomputergames_30_cube.bas", "article":[
+            "CUBE is a game played on the facing sides of a cube with a side dimension of 2. A location is designated by three numbers — e.g., 1, 2, 1. The object is to travel from 1, 1, 1 to 3, 3, 3 by moving one horizontal or vertical (not diagonal) square at a time without striking one of 5 randomly placed landmines. You are staked to $500; prior to each play of the game you may make a wager whether you will reach your destination. You lose if you hit a mine or try to make an illegal move — i.e., change more than one digit from your previous position."
+        ] },
+        { "type":"source", "title": "Depth Charge", "author":"Dana Noftle wrote this program while a student at Acton High School, Acton, Massachusetts.", "source": "basiccomputergames_31_depthcharge.bas", "article":[
+            "In this program you are captain of the destroyer USS Computer. An enemy submarine has been causing trouble and your mission is to destroy it. You may select the seize of the “cube” of water you wish to search in. The computer then determines how many depth charges you get to destroy the submarine.",
+            "Each depth charge is exploded by you specifying a trio of numbers; the first two are the surface coordinates (X,Y), the third is the depth. After each depth charge, your sonar observer will tell you where the explosion was relative to the submarine."   
+        ] },
+        { "type":"source", "title": "Diamond", "author":"By David Ahl of Creative Computing.", "source": "basiccomputergames_32_diamond.bas", "article":[
+            "This program fills an 8.5x11 piece of paper with diamonds (plotted on a hard-copy terminal, of course). The program asks for an odd number to be input in the range 5 to 31. The diamonds printed will be this number of characters high and wide. The number of diamonds across the page will vary from 12 for 5-character wide diamonds to 1 for a diamond 31-characters wide. You can change the content of the pattern if you wish."
+        ] },
+        { "type":"source", "title": "Dice", "author":"By Daniel Freidus, while in the seventh grade at Harrison Jr-Sr High School, Harrison, New York.", "source": "basiccomputergames_33_dice.bas", "article":[
+            "Not exactly a game, this program simulates rolling a pair of dice a large number of times and prints out the frequency distribution. You simply input the number of rolls. It is interesting to see how many rolls are necessary to approach the theoretical distribution:",
+            "<table><tr><td>2</td><td>1/36</td><td>2.7777...%</td></tr><tr><td>3</td><td>2/36</td><td>5.5555...%</td></tr><tr><td>4</td><td>3/36</td><td>8.3333...%</td></tr><tr><td>etc.</td></table>"
+        ] },
+        { "type":"source", "title": "Digits", "author":"Originated at Dartmouth; original author unknown", "source": "basiccomputergames_34_digits.bas", "article":[
+            "The player writes down a set of 30 numbers (0, 1, or 2) at random prior to playing the game. The computer program, using pattern recognition techniques, attempts to guess the next number in your list.",
+            "The computer asks for 10 numbers at a time. It always guesses first and then examines the next number to see if it guessed correctly. By pure luck (or chance or probability), the computer ought to be right 10 times. It is uncanny how much better it generally does than that!"
+        ] },
+        { "type":"source", "title": "Even Wins", "author":"Eric Peters at DEC wrote the GAME OF EVEN WINS. The original author of EVEN WINS is unknown.", "source": "basiccomputergames_35_evenwins.bas", "article":[
+            "This is a game between you and the computer. To play, an odd number of objects (marbles, chips, matches) are placed in a row. You take turns with the computer picking up between one and four objects each turn. The game ends when there are no objects left, and the winner is the one with an even number of objects picked up.",
+            "Two versions of this game are included. While to the player they appear similar, the programming approach is quite different. EVEN WINS, the first version, is deterministic — i.e., the computer plays by fixed, good rules and is impossible to beat if you don’t know how to play the game. It always starts with 27 objects, although you may change this.",
+            "The second version, GAME OF EVEN WINS, is much more interesting because the computer starts out only knowing the rules of the game. Using simple techniques of artificial intelligence (cybernetics), the computer gradually learns to play this game from its mistakes until it plays a very good game. After 20 games, the computer is a challenge to beat. Variation in the human’s style of play seems to make the computer learn more quickly. If you plot the learning curve of this program, it closely resembles classical human learning curves from psychological experiments."
+        ] },
+        { "type":"source", "title": "Game Of Even Wins", "source": "basiccomputergames_35_gameofevenwins.bas", "article":[
+            "This is a game between you and the computer. To play, an odd number of objects (marbles, chips, matches) are placed in a row. You take turns with the computer picking up between one and four objects each turn. The game ends when there are no objects left, and the winner is the one with an even number of objects picked up.",
+            "Two versions of this game are included. While to the player they appear similar, the programming approach is quite different. EVEN WINS, the first version, is deterministic — i.e., the computer plays by fixed, good rules and is impossible to beat if you don’t know how to play the game. It always starts with 27 objects, although you may change this.",
+            "The second version, GAME OF EVEN WINS, is much more interesting because the computer starts out only knowing the rules of the game. Using simple techniques of artificial intelligence (cybernetics), the computer gradually learns to play this game from its mistakes until it plays a very good game. After 20 games, the computer is a challenge to beat. Variation in the human’s style of play seems to make the computer learn more quickly. If you plot the learning curve of this program, it closely resembles classical human learning curves from psychological experiments."
+        ] },
+        { "type":"source", "title": "Flip Flop", "author":"By Micheal Kass of New Hyde Park, New York",  "source": "basiccomputergames_36_flipflop.bas", "article":[
+            "The object of this game is to change a row of ten X’s",
+            "<div class='code'>X X X X X X X X X X</div>",
+            "to a row of ten 0’s",
+            "<div class='code'>0 0 0 0 0 0 0 0 0 0</div>",
+            "by typing in a number corresponding to the position of an “X” in the line. On some numbers one position will change while on other numbers, two will change. For example, inputting a 3 may reverse the X and 0 in position 3, but it might possibly reverse some of other position too! You ought to be able to change all 10 in 12 or fewer moves. Can you figure out a good winning strategy?",
+            "To reset the line to all X’s (same game), type 0 (zero). To start a new game at any point, type 11."
+        ] },
+        { "type":"source", "title": "Football", "author":"By Raymond Miseyka of Butler, Pennsylvania", "source": "basiccomputergames_37_football.bas", "article":[
+            "Football is probably the most popular simulated sports game. I have seen some people play to elect to play computerized football in preference to watching a football game on television.",
+            "Two versions of football are presented. The first is somewhat “traditional” in that you, the player, are playing against the computer. You have a choice of seven offensive plays. On defense the computer seems to play a zone defence, but you have no choice of plays. The computer program presents the necessary rules as you play, and it is also the referee and determines penalties when an infraction is committed..."
+        ] },
+        { "type":"source", "title": "FTBALL", "author":"By John Kemeny at Dartmouth.", "source": "basiccomputergames_37_ftball.bas", "article":[
+            "...in the second version of football, the computer referees a game played between two human players. Each player gets a list of twenty plays with a code value for each one. This list should be kept confidential from your opponent. The codes can be changes in data. All twenty plays are offensive; a defensive play is specified by defending against a type of offensive play. A defense is good for other similar types of plays, for example, a defense against a flare pass is very good against a screen pass but much less good against a half-back option."
+        ] },
+        { "type":"source", "title": "Fur Trader", "author":"By Dan Bachor, University of Calgary, Alberta, Canada", "source": "basiccomputergames_38_furtrader.bas", "article":[
+            "You are the leader of a French fur trading expedition in 1776 leaving the Ontario area to sell furs and get supplies for the next year. You have a choice of three forts at which you may trade. The cost of supplies and the amount you recieve for your furs will depend upon the fort you choose. You also specify what types of furs that you have to trade.",
+            "The game goes on and on until you elect to trade no longer."
+        ] },
+        { "type":"source", "title": "Golf", "author":"Steve North of Creative Computing modified the original version of this game, the author of which is unknown", "source": "basiccomputergames_39_golf.bas", "article":[
+            "This is a single player golf game. In other words it’s you against the golf course (the computer). The program asks for your handicap (maximum of 30) and your area of difficulty. You have a bag of 29 clubs plus a putter. On the course you have to contend with rough, trees, on and off fairway, sand traps, and water hazards. In addition, you can hook, slice, go out of bounds, or hit too far. On putting, you determine the potency factor (or percent of swing). Until you get the swing of the game (no pun intended), you’ll probably was to use a fairly high handicap."
+        ] },
+        { "type":"source", "title": "Gomoko", "author":"Peter Sessions of People’s Computer Company", "source": "basiccomputergames_40_gomoko.bas", "article":[
+            "GOMOKO or GOMOKU is a traditional game of the Orient. It is played by two people on a board of intersecting lines (19 left-to-right lines, 19 top-to-bottom lines, 361 intersections in all). Players take turns. During his turn, a player may cover one intersection with a marker; (one player uses white markers; the other player uses black markers). The object of the game is to get five adjacent markers in a row, horizontally, vertically or along either diagonal.",
+            "Unfortunately, this program does not make the computer a very good player. It does not know when you are about to win or even who has won. But some of its moves may surprise you."
+        ] },
+        { "type":"source", "title": "Guess", "author":"Converted from the original program in FOCAL which appeared in the book “Computers in the Classroom” by Walt Koetke of Lexington High School, Lexington, Massachusetts", "source": "basiccomputergames_41_guess.bas", "article":[
+            "In Program GUESS, the computer chooses a random integer between 0 and any limit you set. You must then try to guess the number the computer has chosen using the clues provided by the computer.",
+            "You should be able to guess the number in one less than the number of digits needed to represent the number in binary notation — i.e., in base 2. This ought to give you a clue as to the optimum search technique."
+        ] },
+        { "type":"source", "title": "Gunner", "author":"Tom Kloos of the Oregon Museum of Science and Industry in Portland, Oregon originally wrote GUNNER. Extensive modifications were added by David Ahl.", "source": "basiccomputergames_42_gunner.bas", "article":[
+            "GUNNER allows you to adjust the fire of a field artillery weapon to hit a stationary target. You specify the number of degrees of elevation of your weapon; 45 degrees provides maximum range with values under or over 45 degrees providing less range.",
+            "You get up to five shots to destroy the enemy before he destroys you. Gun range varies between 20,000 and 60,000 yards and burst radius is 100 yards. You must specify elevation within approximately 0.2 degrees to get a hit."
+        ] },
+        { "type":"source", "title": "Hammurabi", "author":"Originally written in Focal at DEC; author unknown. David Ahl converted it to BASIC and added the 10-year performance assessment.", "source": "basiccomputergames_43_hammurabi.bas", "article":[
+            "In this game you direct the administrator of Sumeria, Hammurabi, how to manage the city. The city initially has 1,000 acres, 100 people and 3,000 bushels of grain in storage.",
+            "You may buy and sell land with your neighboring city-states for bushels of grain — the price will vary between 17 and 26 bushels per acre. You also must use grain to feed your people and as seed to plant the next year’s crop.",
+            "You will quickly find that a certain number of people can only tend a certain amount of land and that people starve if they are not fed enough. You also have the unexpected to contend with such as a plague, rats destroying stored grain, and variable harvests.",
+            "You will also find that managing just the few resources in this game is not a trivial job over a period of say ten years. The crisis of population density rears its head very rapidly.",
+            "Note for trivia buffs: somewhere along the line an m was dropped out of the spelling of Hammurabi in the Ahl version of the computer program. This error has spread far and wide until a generation of students now think that Hammurabi is the incorrect spelling."
+        ] },
+        { "type":"source", "title": "Hangman", "author":"David Ahl modified this program into its current form from the one created by Kenneth Aupperle of Melville, New York", "source": "basiccomputergames_44_hangman.bas", "article":[
+            "This is a simulation of the word guessing game, hangman. The computer picks a word, tells you how many letters in the word it has picked and then you guess a letter in the word. If you are right, the computer tells you where that letter belongs; if your letter is wrong, the computer starts to hang you. You get ten guesses before you are completely hanged:",
+            "<ul><li>Head</li><li>Body</li><li>Right Arm</li><li>Left Arm</li><li>Right Leg</li><li>Left Leg</li><li>Right Hand</li><li>Left Hand</li><li>Right Foot</li><li>Left Foot</li></ul>",
+            "You may add words in Data statements; however if you do, you must also change the random word selector."
+        ] },
+        { "type":"source", "title": "Hello", "author":"By David Ahl", "source": "basiccomputergames_45_hello.bas", "article":[
+            "This is a sample of one of the great number of conversational programs. In a sense, it is like a CAI program except that its responses are just good fun. Whenever a computer is exhibited at a convention or conference with people that have not used a computer before, the conversational programs seem to get the first activity.",
+            "In this particular program, the computer dispenses advice on various problems such as sex. health, money, or job."
+        ] },
+        { "type":"source", "title": "Hi-Lo", "author":"By Dean ALtman of Fort Worth, Texas", "source": "basiccomputergames_47_hi-lo.bas", "article":[
+            "This game is an adaptation of the game GUESS; however, instead of just guessing a number between 1 and 100, in this game you win dollars when you guess the number. The directions, in the words of the author, are as follows:",
+            "<ol><li>There is an amount of money, between one and one hundred dollars, in the “HI-LO” jackpot.</li><li>You will have six chances in which to guess the amount of money in the jackpot.</li><li>After each guess, the computer will tell whether the guess was too high or too low.</li><li>If the correct amount of money is not guessed after six chances, the computer will print the amount in the jackpot.</li><li>If the correct amount of money is guessed within the six chance limit, the computer will register this amount.</li><li>After each sequence of guesses, you have the choice of playing again or ending the program. If a new game is played, a new amount of money will constitute the jackpot.</li><li>If you win more than once, then your earnings are totalled.</li></ol>"
+        ] },
+        { "type":"source", "title": "High IQ", "author":"By Charles Lund at The American School in The Hague, Netherlands", "source": "basiccomputergames_48_highiq.bas", "article":[
+            "This is a computerized version of an old European solitaire game of logic. The game starts with a pegboard shaped like a cross having pegs in every hole but the center. The object is to remove all 32 pegs, or as many as possible, by jumping into an empty hole, then removing the jumped peg.",
+            "There are several different winning strategies for playing, and of course, each strategy can be played eight different ways on the board. Can you find a consistent winner?"
+        ] },
+        { "type":"source", "title": "Horserace", "author":"By Laurie Chevalier while a student at South Portland High School", "source": "basiccomputergames_50_horserace.bas", "article":[
+            "This program simulates a one-mile horse race for three-year old throughbreds. Up to ten people may place bets on the race up to $10,000 each. However, you may only bet to win. You place your bet by inputting the number of the horse, a comma, and the amount of your bet. The computer then shows the position of the horses at seven points around the track and at the finish. Payoffs and winnings are shown at the end."
+        ] },
+        { "type":"source", "title": "Hurkle", "author":"By Bob Albrecht of People’s Computer Company", "source": "basiccomputergames_51_hurkle.bas", "article":[
+            "Hurkle? A Hurkle is a happy beast and lives in another galaxy on a planet named Lirht that has three moons. Hurkle are favorite pets of the Gwik, the dominant race of Lihrt and … well, to find out more, read “The Hurkle is a Happy Beast,” a story in the book A Way Home by Theodore Sturgeon.",
+            "In this program a shy hurkle is hiding on a 10 by 10 grid. Homebase is point 0,0 in the Southwest corner. Your guess as to the gridpoint where the hurkle is hiding should be a pair of whole numbers, separated by a comma. After each try, the computer will tell you the approximate direction to go look for the Hurkle. You get five guesses to find him; you may change this number, although four guesses is actually enough."
+        ] },
+        { "type":"source", "title": "Kinema", "author":"Shorted from the original Huntington Computer Project Program, KINERV, by Richard Pav of Patchogue High School, Patchogue, New York", "source": "basiccomputergames_52_kinema.bas", "article":[
+            "This program tests your fundamental knowledge of kinematics. It presents a simple problem: a ball is thrown straight up into the air at some random velocity. You then must answer three questions about the flight of the ball:",
+            "<ol><li>How high will it go?</li><li>How long until it returns to earth?</li><li>What will be its velocity after a random number of seconds?</li></ol>",
+            "The computer evaluates your performance; within 15% of the correct answer is considered close enough. After each run, the computer gives you another problem until you interrupt it."
+        ] },
+        { "type":"source", "title": "King", "author":"By James A. Storer who wrote it while a student at Lexington High School", "source": "basiccomputergames_53_king.bas", "article":[
+            "This is one of the most comprehensive, difficult, and interesting games. (If you’ve never played one of these games, start with HAMMURABI.)",
+            "In this game, you are Premier of Setats Detinu, a small communist island 30 by 70 miles long. Your job is to decide upon the budget of your country and distribute money to your country from the communal treasury.",
+            "The money system is Rollods; each person needs 100 Rallods per year to survive. Your country’s income comes from farm produce and tourists visiting your magnificent forests, hunting, fishing, etc. Part of your land is farm land but it also has an excellent mineral content and may be sold to foreign industry for strip mining. Industry import and support their own workers. Crops cost between 10 and 15 Rallods per square mile to plant, cultivate, and harvest. Your goal is to complete an eight-year term of office without major mishap. A word of warning: it isn’t easy!"
+        ] },
+        { "type":"source", "title": "Letter", "author":"Loosely based on the original written by Bob Albrect of People’s Computer Company", "source": "basiccomputergames_54_letter.bas", "article":[
+            "LETTER is similar to the game GUESS in which you guess a number chosen by the computer; in this program, the computer picks a random letter of the alphabet and you must guess which one it is using the clues provided as you go along. It should not take you more than five guesses to get the mystery letter."
+        ] },
+        { "type":"source", "title": "Literature Quiz", "author":"By Pamela McGinley while at DEC", "source": "basiccomputergames_57_litquiz.bas", "article":[
+            "This is a simple CAI-type program which presents four multiple-choice questions from children’s literature. Running the program is self-explanatory."
+        ] },
+        { "type":"source", "title": "Love", "author":"By David Ahl", "source": "basiccomputergames_58_love.bas", "article":[
+            "This program is designed to reproduce Robert Indiana’s great art work “Love” with a message of your choice up to 60 characters long."
+        ] },
+        { "type":"source", "title": "LEM", "source": "basiccomputergames_59_lem.bas", "article":[
+            "This game in its many different versions and names (ROCKET, LUNAR, LEM, and APOLLO) is by far and away the single most popular computer game. It exists in various versions that start you anywhere from 500 feet to 200 miles away from the moon, or other planets, too. Some allow the control of directional stabilization rockets and/or the retro rocket. The three versions presented here represent the most popular of the many variations.",
+            "In most versions of this game, the temptation is to slow up too soon and then have no fuel left for the lower part of the journey. This, of course, is disastrous (as you will find out when you land your own capsule)!",
+            "This is the most comprehensive of the three versions and permits you to control the time interval of firing, the thrust, and the attitude angle. It also allows you to work in the metric or English system of measurement. The instructions in the program dialog are very complete, so you shouldn’t have any trouble."
+        ] },
+        { "type":"source", "title": "Rocket", "author":"By Eric Peters at DEC and LEM by William Labaree II of Alexandria, Virginia", "source": "basiccomputergames_59_rocket.bas", "article":[
+            "(Continues from previous page)",
+            "In this version, you start 500 feet above the lunar surface and control the burn rate in 1-second bursts. Each unit of fuel slows your descent by 1 ft/sec. The maximum thrust of your engine is 30 ft/sec/sec."
+        ] },
+        { "type":"source", "title": "MasterMind", "source": "basiccomputergames_60_mastermind.bas", "article":[
+            "In that Match-April 1976 issue of Creative we published a computerized version of Master Mind, a logic game. Master Mind is played by two people—one is called the code-maker; the other, the code-breaker. At the beginning of the game the code-maker forms a code, or combination of colored pegs. He hides these from the code-breaker. The code-breaker then attempts to deduce the code, by placing his own guesses, one at a time, on the board. After he makes a guess (by placing a combination of colored pegs on the board) the code-maker then gives the code-breaker clues to indicate how close the guess was to the code. For every peg in the guess that’s the right color but not in the right position, the code-breaker gets a white peg. Note that these black and white pegs do not indicate which pegs in the guess are correct, but merely that they exist. For example, if the code was:",
+            "<div class='code'>Yellow Red Red Green</div>",
+            "and my guess was",
+            "<div class='code'>Red Red Yellow Black</div>",
+            "I would receive two white pegs and one black peg for the guess. I wouldn’t know (except by comparing previous guesses) which one of the pegs in my guess was the right color in the right position.",
+            "Many people have written computer programs to play Master Mind in the passive role, i.e., the computer is the code maker and the human is the code-breaker. This is relatively trivial; the challenge is writing a program that can also play actively as a code-breaker.",
+            "Actually, the task of getting the computer to deduce the correct combination is not at all difficult. Imagine, for instance, that you made a list of all possible codes. To begin, you select a guess from your list at random. Then, as you receive clues, you cross off from the list those combinations which you know are impossible. For example if your guess is Red Red Green Green and you receive no pegs, then you know that any combination containing either a red or a green peg is impossible and may be crossed of the list. The process is continued until the correct solution is reached or there are no more combinations left on the list (in which case you know that the code-maker made a mistake in giving you the clues somewhere).",
+            "Note that in this particular implementation, we never actually create a list of the combinations, but merely keep track of which ones (in sequential order) may be correct. Using this system, we can easily say that the 523rd combination may be correct, but to actually produce the 523rd combination we have to count all the way from the first combination (or the previous one, if it was lower than 523). Actually, this problem could be simplified to a conversion from base 10 to base (number of colors) and then adjusting the values used in the MID$ function so as not to take a zeroth character from a string if you want to experiment. We did try a version that kept an actual list of all possible combinations (as a string array), which was significantly faster than this version, but which ate tremendous amounts of memory.",
+            "At the beginning of this game, you input the number of colors and number of positions you wish to use (which will directly affect the number of combinations) and the number of rounds you wish to play. While you are playing as the code-breaker, you may type BOARD at any time to get a list of your previous guesses and clues, and QUIT to end the game. Note that this version uses string arrays, but this is merely for convenience and can easily be converted for a BASIC that has no string arrays as long as it has a MID$ function. This is because the string arrays are one-dimensional, never exceed a length greater than the number of positions and the elements never contain more than one character."
+        ] },
+        { "type":"source", "title": "Math Dice", "author":"By Jim Gerrish, a teacher at the Bernice A. Ray School in Hanover, New Hampshire", "source": "basiccomputergames_61_mathdice.bas", "article":[
+            "The program presents pictorial drill on addition facts using printed dice with no reading involved. It is good for beginning addition, since the answer can be derived from counting spots on the dice as well as by memorizing math facts or awareness of number concepts. It is especially effective run on a CRT terminal."
+        ] },
+        { "type":"source", "title": "Name", "author":"By Geoffrey Chase of the Abbey, Portsmouth, Rhode Island", "source": "basiccomputergames_63_name.bas", "article":[
+            "NAME is a silly little ice-breaker to get a relationship going between a computer and a shy human. The sorting algorithm used is highly inefficient — as any reader of Creative Computing will recognize, this is the worst possible sort for speed. But the program is good fun and that’s what counts here."
+        ] },
+        { "type":"source", "title": "Nicomachus", "author":"By David Ahl", "source": "basiccomputergames_64_nicomachus.bas", "article":[
+            "One of the most ancient forms of arithmetic puzzle is sometimes referred to as a “boomerang.” At some time, everyone has been asked to “think of a number,” and, after going through some process of private calculation, to state the result, after which the questioner promptly tells you the number you originally thought of. There are hundreds of varieties of this puzzle.",
+            "The oldest recorded example appears to be that given in Arithmetica of Nicomachus, who died about the year 120. He tells you to think of any whole number between 1 and 100 and divide it successfully by 3, 5, and 7, telling him the remainder in each case. On receiving this information, he promptly discloses the number you thought of.",
+            "Can you discover a simple method of mentally performing this feat? If not, you can see how the ancient mathematician did it by looking at this program."
+        ] },
+        { "type":"source", "title": "Nim", "author":"From Dartmouth College", "source": "basiccomputergames_65_nim.bas", "article":[
+            "NIM is one of the oldest two-person games known to man; it is believed to have originated in ancient China. The name, which was coined by the first mathematician to analyze it, comes from an archaic English verb which means to steal or to take away. Objects are arranged in rows between the two opponents as in the following example:",
+            "<table><tr><td>XXXXXXX</td><td>Row 1</td><td>7 Objects</td></tr><tr><td>XXXXX</td><td>Row 2</td><td>5 Objects</td></tr><tr><td>XXX</td><td>Row 3</td><td>3 Objects</td></tr><tr><td>X</td><td>Row 4</td><td>1 Object</td></tr></table>",
+            "Opponents take turns removing objects until there are none left. The one who picks up the last object wins. The moves are made according to the following rules:","(Continues from previous page)",
+            "<ol><li>On any given turn only objects from one row may be removed. There is no restriction on which row or on how many objects you remove. Of course, you cannot remove more than are in the row.</li><li>You cannot skip a move or remove zero objects.</li></ol>",
+            "The winning strategy can be mathematically defined, however, rather than presenting it here, we’d rather let you find it on your own. HINT: Play a few games with the computer and mark down on a piece of paper the number of objects in each stack (in binary!) after each move. Do you see a pattern emerging?",
+            "This game of NIM is from Dartmouth College and allows you to specify any starting size for the four piles and also a win option. To play traditional NIM, you would simply specify 7,5,3 and 1, and win option 1."
+        ] },
+        { "type":"source", "title": "Number", "author":"By Tom Adametx while a student at Curtis Junior High School in Sudbury, Massachusetts.", "source": "basiccomputergames_66_number.bas", "article":[
+            "In contrast to other number guessing games where you keep guessing until you get the random number selected by the computer (GUESS, TRAP, STARS, etc.), in this game you only get one guess per play and you gain or lose points depending upon how close your guess is to the random number selected by the computer. You occasionally get a jackpot which will double your point count. You win when you get 500 points."
+        ] },
+        { "type":"source", "title": "One Check", "author":"By David Ahl", "source": "basiccomputergames_67_onecheck.bas", "singleColumn":true, "article":[
+            "In this game or puzzle, 48 checkers are placed on the two outside spaces of a standard 64-square checkerboard as shown:",
+            "<table><tr><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td></td><td></td><td></td><td></td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr><tr><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr></table>",
+            "The object is to remove as many checkers as possible by diagonal jumps (as in standard checkers).",
+            "It is easy to remove 30 to 39 checkers, a challenge to remove 40 to 44, and a substantial feat to remove 45 to 47."
+        ] },
+        { "type":"source", "title": "Pizza", "author":"Seems to have surfaced originally at the University of Georgia in Athens, Georgia. The author is unknown", "source": "basiccomputergames_69_pizza.bas", "article":[
+            "In this game, you take orders for pizzas from people living in Hyattsville. Armed with a map of the city, you must then tell your delivery boy the address where the pizza is to be delivered. If the pizza is delivered to the correct address, the customer phones you and thanks you; if not, you must give the driver the correct address until the pizza gets delivered.",
+            "Some interesting modifications suggest themselves for this program such as pizzas getting cold after two incorrect delivery attempts or taking three or more orders at a time and figuring out the shortest delivery route."
+        ] },
+        { "type":"source", "title": "Poetry", "author":"The original author of this program is unknown. It was modified and reworked by Jim Bailey, Peggy Ewing, and Dave Ahl at DEC.", "source": "basiccomputergames_70_poetry.bas", "singleColumn":true, "article":[
+            "This program produces random verse which might loosely be considered in the Japanese Haiku style. It uses 20 phrases in four groups of five phrases each and generally cycles through the groups in order. It inserts commas (random — 19% of the time), indentation (random — 22% of the time), and starts new paragraphs (18% probability but at least once every 20 phrases).",
+            "The phrases in POETRY are somewhat suggestive of Edgar Allen Poe. Try it with phrases from computer technology, from love and romance, from four-year-old children, or from some other project. Send us the output.",
+            "Here are some phrases from nature to try:",
+            "<div class='code'>Carpet of ferns     Mighty Oaks<br>Morning dew         Grace and beauty<br>Tang of dawn        Silently singing<br>Swaying pines       Nature speaking<br><br>Entrances me        Untouched, unspoiled<br>Soothing me         Shades of green<br>Rustling leaves     Tranquility<br>Radiates calm       …so peaceful</div>"
+        ] },
+        { "type":"source", "title": "Poker", "author":"By A. Christopher Hall of Trinity College, Hartford, Connecticut", "source": "basiccomputergames_71_poker.bas", "article":[
+            "You and the computer are opponents in this game of draw poker. At the start of the game, each player is given $200. The game ends when either player runs out of money, although if you go broke the computer will offer to buy back your wristwatch or diamond tie tack.",
+            "The computer opens the betting before the draw; you open the betting after the draw. If you don’t have a hand that’s worth anything and you want to fold, bet 0. Prior to the draw, to check the draw, you may bet .5. Of course, if the computer has made a bet, you must match it in order to draw or, if you have a good hand, you may raise the bet at any time."
+        ] },
+        { "type":"source", "title": "Reverse", "author":"By Peter Sessions of People’s Computer Company and the notes adapted from his original write-up", "source": "basiccomputergames_73_reverse.bas", "article":[
+            "The game of REVERSE requires you to arrange a list of numbers in numerical order from left to right. To move, you tell the computer how many numbers (counting from the left) to reverse. For example, if the current list is:",
+            "<div class='code'>2 3 4 5 1 6 7 8 9</div>",
+            "and you reverse 4, the result will be:",
+            "<div class='code'>5 4 3 2 1 6 7 8 9</div>",
+            "Now if you reverse 5, you win!",
+            "There are many ways to beat the game, but approaches tend to be either algorithmic or heuristic. The game thus offers the player a chance to play with these concepts in a practical (rather than theoretical) context.",
+            "An algorithmic approach guarantees a solution in a predictable number of moves, given the number of items in the list. For example, one method guarantees a solution in 2N - 3 moves when teh list contains N numbers. The essence of an algorithmic approach is that you know in advance what your next move will be. Once could easily program a computer to do this.",
+            "A heuristic approach takes advantage of “partial orderings” in the list at any moment. Using this type of approach, your next move is dependent on the way the list currently appears. This way of solving the problem does not guarantee a solution in a predictable number of moves, but if you are lucky and clever, you may come out ahead of the algorithmic solutions. One could not so easily program this method.",
+            "In practice, many players adopt a “mixed” strategy, with both algorithmic and heuristic features. Is this better than either “pure” strategy?"
+        ] },
+        { "type":"source", "title": "Rock, Scissors, Paper", "author":"By Charles Lund while at the American School in The Hague, Netherlands", "source": "basiccomputergames_74_rockscissors.bas", "article":[
+            "Remember the game of rock-scissors-paper. You and your opponent make a motion three times with your fists and then either show:",
+            "<ul><li>a flat hand (paper)</li><li>fist (rock)</li><li>two fingers (scissors)</li></ul>",
+            "Depending upon what is shown, the game is a tie (both show the same) or one person wins. Paper wraps up rock, so it wins. Scissors cut paper, so they win. And rock breaks scissors, so it wins.",
+            "In this computerized version of rock-scissors-paper, you can play up to ten games vs. the computer."
+        ] },
+        { "type":"source", "title": "Russian Roulette", "author":"By Tom Adametx while a student at Curtis Jr. High School in Sudbury, Massachusetts", "source": "basiccomputergames_76_russianroulette.bas", "article":[
+            "In this game, you are given by the computer a revolver loaded with one bullet and five empty chambers. You spin the chamber and pull the trigger by inputting a “1,” or, if you want to quit, input a “2.” You win if you play ten times and are still alive."
+        ] },
+        { "type":"source", "title": "Sine Wave", "author":"By David Ahl", "source": "basiccomputergames_78_sinewave.bas", "article":[
+            "Did you ever go to a computer show and see a bunch of CRT terminals just sitting there waiting forlornly for someone to give a demo on them. It was one of those moments when I was at DEC that I decided there should be a little bit of background activity. And why not plot with words instead of the usual X’s? Thus SINE WAVE was born and lives on in dozens on different versions. At least those CRTs don’t look so lifeless anymore."
+        ] },
+        { "type":"source", "title": "Slalom", "author":"By J. Panek while a student at Dartmouth College", "source": "basiccomputergames_79_slalom.bas", "article":[
+            "This game simulates a slalom run down a course with one to 25 gates. The user picks the number of gates and has some control over his speed down the course.",
+            "If you’re not a skier, here’s your golden opportunity to try it with minimal risk. If you are a skier, here’s something to do while your leg is in a cast."
+        ] },
+        { "type":"source", "title": "Slots", "author":"Originally written by Fred Mirabella and Bob Harper", "source": "basiccomputergames_80_slots.bas", "article":[
+            "The slot machine or one-arm bandit is a mechanical device that will absorb coins just about as fast as you can feed it. After inserting a coin, you pull a handle that sets three independent reels spinning. If the reels stop with certain symbols appearing in the pay line, you get a certain payoff. The original slot machine, called the Liberty Bell, was invented in 1895 by Charles Fey in San Francisco. Fey refused to sell or lease the manufacturing rights, so H.S. Mills in Chicago built a similar, but much improved machine called the Operators Bell. This has survived nearly unchanged to today.",
+            "On the Operators Bell and other standard slot machines, there are 20 symbols on each wheel but they are not distributed evenly among the objects (cherries, bar, apples, etc.). Of the 8,000 passible combinations, the expected payoff (to the player) is 7,049 or $89.11 for every $100.00 put in, one of the lowest expected payoffs in all casino games.",
+            "In the program here, the payoff is considerably more liberal; indeed it appears to favor the player by 11% — i.e., an expected payoff of $111 for each $100 bet."
+        ] },
+        { "type":"source", "title": "Splat", "author":"John Yegge while at the Oak Ridge Associated Universities", "source": "basiccomputergames_81_splat.bas", "article":[
+            "SPLAT simulates a parachute jump in which you try to open your parachute at the last possible moment without going splat! You may select your own terminal velocity or let the computer do it for you. You many also select the acceleration due to gravity or, again, let the computer do it in which case you might wind up on any of eight planets (out to Neptune), the moon, or the sun.",
+            "The computer then tells you the height you’re jumping from and asks for the seconds of free fall. It then divides your free fall time into eight intervals and gives you progress reports on your way down. The computer also keeps track of all prior jumps in the array A and lets you know how you compared with previous successful jumps. If you want to recall information from previous runs, then you should store array A in a disk or take file and read it before each run."
+        ] },
+        { "type":"source", "title": "Stars", "author":"By Bob Albrecht of People’s Computer Company", "source": "basiccomputergames_82_stars.bas", "article":[
+            "In this game, the computer selects a random number from 1 to 100 (or any value you set). You try to guess the number and the computer gives you clues to tell you how close you’re getting. One star (*) means you’re far away from the number; seven stars (*******) means you’re really close. You get 7 guesses.",
+            "On the surface this game is similar to GUESS; however, the guessing strategy is quite different. See if you can come up with one or more approaches to finding the mystery number."
+        ] },
+        { "type":"source", "title": "Super Star Trek", "source": "basiccomputergames_84_superstartrek.bas", "singleColumn":true, "article":[
+            "<b>Brief History</b>",
+            "Many versions of Star Trek have been kicking around various college campuses since the late sixties. I recall playing one at Carnegie-Mellon Univ. in 1967 or 68, and a very different one at Berkeley. However, these were a far cry from the one written by Mike Mayfield of Centerline Engineering and/or Custom Data. This was written for an HP2000C and completed in October 1972. It became the “standard” Star Trek in February 1973 when it was put in the HP contributed program library and onto a number of HP Data Center machines.",
+            "In the summer of 1973, I converted the HP version to BASIC-PLUS for DEC’s RSTS-11 compiler and added a few bits and pieces while I was at it. Mary Cole at DEC contributed enormously to this task too. Later that year I published it under the name SPACWE (Space War — in retrospect, an incorrect name) in my book 101 Basic Computer Games.It is difficult today to find an interactive computer installation that does not have one of these versions of Star Trek available.",
+            "<b>Quadrant Nomenclature</b>",
+            "Recently, certain critics have professed confusion as to the origin on the “quadrant” nomenclature used on all standard CG (Cartesian Galactic) maps. Naturally, for anyone with the remotest knowledge of history, no explanation is necessary; however, the following synopsis should suffice for the critics:",
+            "As everybody schoolboy knows, most of the intelligent civilizations in the Milky Way had originated galactic designations of their own choosing well before the Third Magellanic Conference, at which the so-called “2⁶ Agreement” was reached. In that historic document, the participant cultures agreed, in all two-dimensional representations of the galaxy, to specify 64 major subdivisions, ordered as an 8 x 8 matrix. This was partially in deference to the Earth culture (which had done much in the initial organization of the Federation), whose century-old galactic maps had landmarks divided into four “quadrants,” designated by ancient “Roman Numerals” (the origin of which has been lost).",
+            "To this day, the official logs of starships originating on near-Earth starbases still refer to the major galactic areas as “quadrants.”",
+            "The relation between the Historical and Standard nomenclatures is shown in the simplified CG map below.",
+            "<table><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr><tr><th>1</th><td>ANTARES</td><td></td><td></td><td></td><td>SIRIUS</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td></td><td>III</td><td>IV</td></tr><tr><th>2</th><td>RIGEL</td><td></td><td></td><td></td><td>DENEB</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr><tr><th>3</th><td>PROCYON</td><td></td><td></td><td></td><td>CAPELLA</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr><tr><th>4</th><td>VEGA</td><td></td><td></td><td></td><td>BETELGUESE</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr><tr><th>5</th><td>CANOPUS</td><td></td><td></td><td></td><td>ALDEBARA</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr><tr><th>6</th><td>ALTAIR</td><td></td><td></td><td></td><td>REGULUS</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr><tr><th>7</th><td>SAGITTARIOUS</td><td></td><td></td><td></td><td>ARCTURUS</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr><tr><th>8</th><td>POLLUX</td><td></td><td></td><td></td><td>SPICA</td><td></td><td></td><td></td></tr><tr><th></th><td>I</td><td>II</td><td>III</td><td>IV</td><td>I</td><td>II</td><td>III</td><td>IV</td></tr></table>",
+            "<b>Super Star Trek Rules and Notes</b>",
+            "OBJECTIVE: You are Captain of the starship “Enterprise”† with a mission to seek and destroy a fleet of Klingon† warships (usually about 17) which are menacing the United Federation of Planets.† You have a specified number of stardates in which to complete your mission. You also have two or three Federation Starbases† for resupplying your ship.",
+            "You will be assigned a starting position somewhere in the galaxy. The galaxy is divided into an 8 x 8 quadrant grid. The astronomical name of a quadrant is called out upon entry into a new region. (See “Quadrant Nomenclature.”) Each quadrant is further divided into an 8 x 8 section grid.",
+            "On a section diagram, the following symbols are used:",
+            "<ul><li><span class='code'><*></span> Enterprise</li><li><span class='code'>†††</span> Klingon</li><li><span class='code'>>!<</span> Starbase</li><li><span class='code'>*</span> Star</li></ul>",
+            "You have eight commands available to you (A detailed description of each command is given in the program instructions.)",
+            "<ul><li><span class='code'>NAV</span> Navigate the Starship by setting course and warp engine speed.</li><li><span class='code'>SRS</span> Short-range sensor scan (one quadrant)</li><li><span class='code'>LRS</span> Long-range sensor scan (9 quadrants)</li><li><span class='code'>PHA</span> Phaser† control (energy gun)</li><li><span class='code'>TOR</span> Photon torpedo control</li><li><span class='code'>SHE</span> Shield control (protects against phaser fire)</li><li><span class='code'>DAM</span> Damage and state-of-repair report</li><li><span class='code'>COM</span> Call library computer</li></ul>",
+            "Library computer options are as follows (more complete descriptions are in program instructions):",
+            "<ul><li><span class='code'>0</span> Cumulative galactic report</li><li><span class='code'>1</span> Status report</li><li><span class='code'>2</span> Photon torpedo course data</li><li><span class='code'>3</span> Starbase navigation data</li><li><span class='code'>4</span> Direction/distance calculator</li><li><span class='code'>5</span> Quadrant nomenclature map</li></ul>",
+            "Certain reports on the ship’s status are made by officers of the Enterprise who appears on the original TV Show—Spock, Scott, Uhura, Chekov, etc.",
+            "Klingons are non-stationary within their quadrants. If you try to maneuver on them, they will move and fire on you.",
+            "Firing and damage notes:",
+            "<ul><li>Phaser fire diminishes with increased distance between combatants.</li><li>If a Klingon zaps you hard enough (relative to your shield strength) he will generally cause damage to some part of your ship with an appropriate “Damage Control” report resulting.</li><li>If you don’t zap a Klingon hard enough (relative to his shield strength) you won’t damage him at all. Your sensors will tell the story.</li><li>Damage control will let you know when out-of-commission devices have been completely repaired.</li></ul>",
+            "Your engines will automatically shit down if you should attempt to leave the galaxy, or if you should try to maneuver through a star, or Starbase, or—heaven help you—a Klingon warship.",
+            "In a pinch, or if you should miscalculate slightly, some shield control energy will be automatically diverted to warp engine control (if your shield are operational!).",
+            "While you’re docked at a Starbase, a team of technicians can repair your ship (if you’re willing for them to spend the time required—and the repairmen always underestimate…)",
+            "If, to same maneuvering time toward the end of the game, you should cold-bloodedly destroy a Starbase, you get a nasty note from Starfleet Command. If you destroy your last Starbase, you lose the game! (For those who think this is too a harsh penalty, delete line 5360-5390, and you’ll just get a “you dumdum!”-type message on all future status reports.)",
+            "End game logic has been “cleaned up” in several spots, and it is possible to get a new command after successfully completing your mission (or, after resigning your old one).",
+            "For those of you with certain types of CRT/keyboards setups (e.g. Westinghouse 1600), a “bell” character is inserted at appropriate spots to cause the following items to flash on and off on the screen:",
+            "<ul><li>The Phrase “*RED*” (as in Condition: Red)</li><li>The character representing your present quadrant in the cumulative galactic record printout.</li></ul>",
+            "This version of Star Trek was created for a Data General Nova 800 system with 32K or core. So that it would fit, the instructions are separated from the main program via a CHAIN. For conversion to DEC BASIC-PLUS, Statement 160 (Randomize) should be moved after the return from the chained instructions, say to Statement 245. For Altair BASIC, Randomize and the chain instructions should be eliminated."
+        ] },
+        { "type":"source", "title": "Super Star Trek (Instructions)", "source": "basiccomputergames_84_superstartrekins.bas" },
+        { "type":"source", "title": "Synonym", "author":"By Walt Koetke of Lexington High School, Massachusetts", "source": "basiccomputergames_85_synonym.bas", "article":[
+            "A synonym of a word is another word (in the English language) which has the same, or very nearly the same, meaning. This program tests your knowledge of synonyms of a few common words.",
+            "The computer chooses a word and asks you for a synonym. The computer then tells you whether you’re right or wrong. If you can’t think of a synonym, type “HELP” which causes a synonym to be printed.",
+            "You may put in words of your choice in the data statements. The number following DATA in Statement 500 is the total number of data statements. In each data statement, the first number is the number of words in that statement.",
+            "Can you think of a way to make this into a more general kind of CAI program for any subject?"
+        ] },
+        { "type":"source", "title": "Target", "author":"H. David Crockett of Fort Worth, Texas", "source": "basiccomputergames_86_target.bas", "article":[
+            "In this program, you are firing a weapon from a spaceship in 3-dimensional space. Your ship, the Starship Enterprise, is located at the origin (0,0,0) of a set of x,y,z coordinates. You will be told the approximate location of the target in 3-dimensional rectangular coordinates, the approximate angular deviation from the x and z axes in both radians and degrees, and the approximate distance to the target.",
+            "Given this information, you then proceed to shoot at the target. A shot within 20 kilometers of the target destroys it. After each shot, you are given information as to the position of the explosion of your shot and a somewhat improved estimate of the location of the target. Fortunately, this is just practice and the target doesn’t shoot back. After you have attained proficiency, you ought to be able to destroy a target in 3 or 4 shots. However, attaining proficiency might take a while!"
+        ] },
+        { "type":"source", "title": "3D Plot", "author":"By Mark Bramhall of DEC", "source": "basiccomputergames_87_3dplot.bas", "article":[
+            "3-D PLOT will plot the family of curves of any function. The function Z is plotted as “rising” out of the x-y plane with x and y inside a circle of radius 30. The resultant plot looks almost 3-dimensional.",
+            "You set the function you want plotted in line 5. As with any mathematical plot, some functions come out “prettier” than others."
+        ] },
+        { "type":"source", "title": "3-D Tic-Tac-Toe", "author":"From Dartmouth College", "source": "basiccomputergames_88_qubit.bas", "article":[
+            "3-D TIC-TAC-TOE is a game of tic-tac-toe in a 4x4x4 cube. You must get 4 markers in a row or diagonal along any 3-dimensional plane in order to win.",
+            "Each move is indicated by a 3-digit number (digits not separated by commas), with each digit between 1 and 4 inclusive. The digits indicate the level, column, and row, respectively, of the move. You can win if you play correctly; although, it is considerably more difficult than standard, two-dimensional 3x3 tic-tac-toe."
+        ] },
+        { "type":"source", "title": "Tic Tac Toe (1)", "author":"By Tom Koos while a student researcher at the Oregon Museum of Science and Industry, extensively modified by Steve North of Creative Computing", "source": "basiccomputergames_89_tictactoe1.bas", "article":[
+            "The game of tic-tac-toe hardly needs any introduction. In this one, you play versus the computer. Moves are entered by number:",
+            "<div class='code'>1   2   3<br><br>4   5   6<br><br>7   8   9</div>",
+            "If you make any bad moves, the computer will win; if the computer makes a bad move, you can win; otherwise, the game ends in a tie."
+        ] },
+        { "type":"source", "title": "Tic Tac Toe (2)", "author":"By Curt Flick of Akron, Ohio", "source": "basiccomputergames_89_tictactoe2.bas", "article":[
+            "A second version of the game is included which prints out the board after each move. This is ideally suited to a CRT terminal, particularly if you modify it to not print out a new board after each move, but rather use the cursor to make the move."
+        ] },
+        { "type":"source", "title": "Tower", "author":"By Charles Lund while at the American School in the Hague, Netherlands", "source": "basiccomputergames_90_tower.bas", "article":[
+            "This is a simulation of a game of logic that originated in the middle East. It is sometimes called Pharaoh's Needles, but its most common name is the Towers of Hanoi.",
+            "Legend has it that a secret society of monks live beneath the city of Hanoi. They possess three large towers or needles on which different size gold disks may be placed. Moving one at a time and never placing a large on a smaller disk, the monks endeavor to move the tower of disks from the left needle to the right needle. Legend says when they have finished moving this 64-disk tower, the world will end. How many moves will they have to make to accomplish this? If they can move 1 disk per minute and work 24 hours per day, how many years will it take?",
+            "In the computer puzzle you are faced with three upright needles. On the leftmost needle are placed from two to seven graduated disks, the largest being on bottom and smallest on top. Your object is to move the entire stack of disks to the rightmost needle. However, you many only move one disk at a time and you may never place a larger disk on top of a smaller one.",
+            "In this computer game, the disks are referred to by their size — i.e., the smallest is 3, next 5, 7, 9, 11, 13, and 15. If you play with fewer than 7 disks always use the largest, i.e. with 2 disks you would use nos. 13 and 15. The program instructions are self-explanatory. Good luck!"
+        ] },
+        { "type":"source", "title": "Train", "author":"Originally written in FOCAL by one student for use by others in his class, submitted by Walt Koetke, Lexington High School, Lexington, Mass.", "source": "basiccomputergames_91_train.bas", "article":[
+            "TRAIN is a program which uses the computer to generate problems with random initial conditions to teach about the time-speed-distance relationship (distance = rate x time). You then input your answer and the computer verifies your response.",
+            "TRAIN is merely an example of a student-generated problem. Maximum fun (and benefit) comes more from writing programs like this as opposed to solving the specific problem posed. Exchange your program with others—you solve their problem and let them solve yours."
+        ] },
+        { "type":"source", "title": "Trap", "author":"Suggested by a 10-year-old when he was playing GUESS. Originally programmed by Steve Ullman and extensively modified into its final form by Bob Albrecht of People’s Computer Co.", "source": "basiccomputergames_92_trap.bas", "article":[
+            "This is another in the family of “guess the mystery number” games. In TRAP the computer selects a random number between 1 and 100 (or other limit set). Your object is to find the number. On each guess, you enter 2 numbers trying to trap the mystery number between your two trap numbers. The computer will tell you if you have trapped the number.",
+            "To win the game, you must guess the mystery number by entering it as the same value for both of your trap numbers. You get 6 guesses (this should be changed if you change the guessing limit).",
+            "After you have played GUESS, STARS, and TRAP, compare the guessing strategy you have found best for each game. Do you notice any similarities? What are the differences? Can you write a new guessing game with still another approach?"
+        ] },
+        { "type":"source", "title": "23 Matches", "author":"Originally written by Bob Albrecht of People’s Computer Company", "source": "basiccomputergames_93_23matches.bas", "article":[
+            "In the game of twenty-three matches, you start with 23 matches lying on a table. On each turn, you may take 1, 2, or 3 matches. You alternate moves with the computer and the one who has to take the last match loses.",
+            "The easiest way to devise a winning strategy is to start at the end of the game. Since your wish to leave the last match to your opponent, you would like to have either 4, 3, or 2 on your last turn you so can take away 3, 2, or 1 and leave 1. Consequently, you would like to leave your opponent with 5 on his next to last turn so, no matter what his move, you are left with 4, 3, or 2. Work this backwards to the beginning and you’ll find the game can effectively be won on the first move. Fortunately, the computer gives you the first move, so if you play wisely, you can win.",
+            "After you’ve mastered 23 Matches, move on to BATNUM and then to NUM."
+        ] },
+        { "type":"source", "title": "War", "source": "basiccomputergames_94_war.bas", "article":[
+            "This program plays the card game of War. In War, the card deck is shuffled, then two cards are dealt, one to each player. Players compare cards and the higher card (numerically) wins. In case of a tie, no one wins. The game ends when you have gone through the whole deck (52 cards, 26 games) or when you decide to quit.",
+            "The computer gives cards by suit and number, for example, S-7 is the 7 of spades."
+        ] },
+        { "type":"source", "title": "Weekday", "author":"Adapted from a GE timesharing program by Tom Kloos at the Oregon Museum of Science and Industry", "source": "basiccomputergames_95_weekday.bas", "article":[
+            "This program gives facts about your date of birth (or some other day of interest). It is not prepared to give information on people born before the use of the current type of calendar, i.e. year 1582.",
+            "You merely enter today’s date in the form—month, day, year and your date of birth in the same form. The computer then tells you the day of the week of your birth date, your age, and how much time you have spent sleeping, eating, working, and relaxing."
+        ] },
+        { "type":"source", "title": "Word", "author":"Charles Reid of Lexington High School, Lexington, Massachusetts", "source": "basiccomputergames_96_word.bas", "article":[
+            "WORD is a combination of HANGMAN and BAGELS. In this game, the player must guess a word with clues as to a letter position furnished by the computer. However, instead of guessing one letter at a time, in WORD you guess an entire word (or group of 5 letters, such as ABCDE). The computer will tell you if any letters that you have guessed are in the mystery word and if any of them are in the correct position. Armed with these clues, you go on guessing until you get the word or, if you can’t get it, input a “?” and the computer will tell you the mystery word.",
+            "You may change the words in Data Statements, but they must be 5-letter words."
+        ] }
+    ]
+}

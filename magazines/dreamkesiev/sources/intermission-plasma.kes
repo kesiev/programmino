@@ -1,0 +1,9 @@
+w=40
+h=24
+print at 29,24;"I T ' S   P L A S M A";
+for (x=0;x<w;x++)
+    for (y=0;y<h;y++) {
+        hue=sin(x/19+sin(y/9)+sin((x+y)/25)+sin(sqr(x^2+y^2)/8)
+        paper hue*16
+        print at x*2,y;"  ";
+    }

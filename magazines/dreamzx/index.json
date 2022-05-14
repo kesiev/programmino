@@ -1,0 +1,78 @@
+{
+    "shortTitle":"Dream ZX",
+    "title":"Dream ZX",
+    "year":2021,
+    "sourcesRoot":"sources",
+    "sourcesPackages":">dream-zx",
+    "pages":[
+        { 
+            "type":"cover",
+            "title":"Cover",
+            "style":"background: rgb(51,51,51);background: linear-gradient(45deg, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 4%, rgba(255,0,0,1) 6%, rgba(243,255,0,1) 9%, rgba(37,255,0,1) 11%, rgba(0,255,250,1) 13%, rgba(51,51,51,1) 15%, rgba(51,51,51,1) 100%);",
+            "elements":[
+                {
+                    "type":"top",
+                    "style":"font-family:'Keypunch029Regular';color:#fff",
+                    "text":"From all around the internet"
+                },{
+                    "type":"title large",
+                    "style":"font-family:'Web IBM VGA 8x16';color:#fff;text-shadow:0px -10px 0px #000",
+                    "text":"Dream ZX"
+                },{
+                    "type":"subtitle large",
+                    "style":"background-color:#fff;box-shadow:0px -10px 0px #000;font-family:'Keypunch029Regular'",
+                    "text":"A collection of Programmino-compatible ZX Spectrum 48K BASIC games"
+                },{
+                    "type":"footer",
+                    "style":"font-family:'YoungSerifRegular';color:#fff;border-top:5px solid rgba(255,255,255,0.3)",
+                    "text":"2022"
+                }
+            ]
+        },
+        { "type":"firstpage", "title":"Introduction", "subtitle":"Statement Lost", "author":"KesieV", "article":[
+            "When I think about my tiny old ZX Spectrum 48k I feel nostalgia and guilt.",
+            "When I was a kid it used to be the \"black sheep\" of my house. Now that I'm an adult I struggle to understand why.",
+            "Maybe it was for the tiny keyboard that made it look like a toy. Maybe because it used to load stuff from music cassette players instead of its dedicated hardware. Maybe because it was missing a built-in joystick port - you had to buy and plug an adapter. Maybe it was for the rubber keys with all the available BASIC statements printed on it as it was admitting that \"That's all I can do, man\".",
+            "Or, more sincerely, It was for its cheap beeper, the primitive graphics, the color clash, the slow pace of his games.",
+            "Looking back I admit that all of his limits were his own distinctive traits. It offered an unique design, original materials, modularity, and flexibility. Its sounds and images are so characteristic and recognizable even today.",
+            "I ended trading it for a Sega Master System one day - there was Alex Kidd in there. Today the ZX Spectrum can play First Person Shooters.",
+            "Lesson learned.",
+            "Programmino simulates some features inspired by the original ZX Spectrum 48k, like drawing on screen and UDGs, collected by the <span class='code'>dream-zx</span> package. This way it can run some ZX Spectrum 48k BASIC games... but often with some compromises - or artistic choices, if you prefer.",
+            "Some games may be limited, some others may display some glitches, and some may not run at all.",
+            "The best way to experience these games as they were meant is using a ZX Spectrum 48k emulator or, obviously, on the original hardware."
+        ], "references":[
+            {
+                "description":"When available, the original program source can be reached by hitting the \"Read more...\" button."
+            }
+        ] },
+        { "type":"toc", "title":"Table of Contents" },
+        { "type":"source", "title":"AlexK. Rock-Paper-Scissors", "author":"By azimov", "url":"https://bunsen.itch.io/alexk-rock-paper-scissors-by-azimov", "source":"10lines_rockpaperscissors.bas", "article":[
+            "In this game you have to beat the 3 bosses playing the game of Rock-Paper-Scissors, in wich two opponents select a figure to show at same time with her hands.",
+            "The rock beats the scissors, the scissors beats the paper and the paper beats the rock.",
+            "You have to take an average of 3 to beat each 3 bosses.",
+            "And there is a final secret boss."
+        ] },
+        { "type":"source", "title":"Traficante", "author":"By Mariano Chiaverano", "url":"https://bunsen.itch.io/traficante-by-mariano-chiaverano", "source":"10lines_traficante.bas", "article":[
+            "The dealer is an action game in pure Basic Sinclair (Spectrum 48kb) in 10 lines.",
+            "Escape in your car through the desert carrying the merchandise, the police have set traps everywhere \"X\" that will drain you fuel. To reload it you must pass over the \"#\". As you progress you will be more sought after, so there will be more traps."
+        ] },
+        { "type":"source", "title":"Arc", "author":"By KesieV", "source":"manual_arc.bas", "article":[
+            "A simple arc."
+        ] },
+        { "type":"source", "title":"Fractal", "author":"From Advanced Graphics with ZX Sinclair Spectrum", "url":"", "source":"manual_hiresdraw.bas" },
+        { "type":"source", "title":"Random draw", "author":"By Steven Vickers, from Sinclair ZX Spectrum BASIC Programming", "url":"https://worldofspectrum.org/ZXBasicManual/zxmanchap17.html", "source":"manual_randomdraw.bas", "article":[
+            "You can also plot and draw in colour, although you have to bear in mind that colours always cover the whole of a character position and cannot be specified for individual pixels. When a pixel is plotted, it is set to show the full ink colour, and the whole of the character position containing it is given the current ink colour.",
+            "(...but there is no color clash in Programmino so it won't happen! &dash; KesieV)"
+        ] },
+        { "type":"source", "title":"SIN plot", "author":"By Steven Vickers, from Sinclair ZX Spectrum BASIC Programming", "url":"https://worldofspectrum.org/ZXBasicManual/zxmanchap17.html", "source":"manual_sinplot.bas", "article":[
+            "Here is a rather more interesting program. It plots a graph of the function SIN (a sine wave) for values between 0 and 2p."
+        ] },
+        { "type":"source", "title":"SQRT plot", "author":"By Steven Vickers, from Sinclair ZX Spectrum BASIC Programming", "url":"https://worldofspectrum.org/ZXBasicManual/zxmanchap17.html", "source":"manual_sqrtplot.bas", "article":[
+            "This next program plots a graph of SQR (part of a parabola) between 0 and 4."
+        ] },
+        { "type":"source", "title":"Triangles", "author":"By Steven Vickers, from Sinclair ZX Spectrum BASIC Programming", "url":"", "source":"manual_triangles.bas" },
+        { "type":"source", "title":"Two circles", "author":"By Steven Vickers, from Sinclair ZX Spectrum BASIC Programming", "url":"https://worldofspectrum.org/ZXBasicManual/zxmanchap17.html", "source":"manual_twocircles.bas", "article":[
+            "Try to draw circles using SIN and COS."
+        ] }
+    ]
+}

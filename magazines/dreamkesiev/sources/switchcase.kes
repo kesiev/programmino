@@ -1,0 +1,17 @@
+for (i=0;i<10;i++)
+    print "Case ";i;": ";:switch (i) {
+        case 6:
+        case 8:print "I'm 6 or 8.":break
+        case 1:{
+            print "I'm 1."
+            break
+        }
+        case 2:print "I'm 2 and not breaking so...";
+        case 3:print "...I'm 3.":break
+        default:{
+            print "Default (";i;") but not breaking so...";
+        }
+        case 5:{
+            print "...It's still got by 5."
+        }
+    }

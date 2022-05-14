@@ -1,0 +1,11 @@
+print "Assign variables"
+a:=a+1
+$b=3
+$longname="foo"
+print " \\_ a: ";a
+print " \\_ b: "+b
+print " \\_ $longname: "+$longname
+(* a comment *)
+print "Variables manipulation"
+a++
+print " \\_ a: ";a

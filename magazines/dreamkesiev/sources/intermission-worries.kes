@@ -1,0 +1,68 @@
+// Load ZX Spectrum UDG
+for (i = 0; i<16 ; i++) {
+    read a;
+    poke 65368+i,a;
+}
+
+// Sprites
+for x=12800 to 12800+63
+    read y
+    poke x,y
+    next x
+
+poke 53285,   0 ; poke 53286,  12 ; poke 53269, 255
+poke 53287,  14 ; poke 2040,  200 ; poke 53248, 0
+poke 53249, 122 ; poke 53276,   1 ; poke 53277, 0
+                                  ; poke 53271, 0
+
+// Colors! Colors!
+i=-10
+while (i<640) {
+    ink int(rnd*16)
+    plot i,0
+    draw 10,399
+    i++
+}
+
+// Caged in a nice frame
+ink 15
+plot 0,0
+draw 639,0
+draw 0,399
+draw -639,0
+draw 0,-399
+
+// Animate
+frame = 0
+
+100 switch ((frame/20)%2) {
+    case 0: {
+        print at 22,13;" \a \b \a IF IT'S ALL RIGHT... \a \b \a "
+        break
+    }
+    case 1:{
+        print at 22,13;" \b \a \b ";flash 1;"WHY ARE YOU WORRIED?";flash 0;" \b \a \b "
+        break
+    }
+}
+
+// Starcat moves forward...
+poke 53248, frame%180*2
+
+// Wait a little bit
+for i=1 to 200
+next i
+
+frame++
+
+goto 100
+
+// ZX Spectrum UDG
+data 24, 24, 0, 60, 90, 153, 36, 102
+data 24, 24, 0, 60, 219, 24, 24, 60
+
+// C64 Sprite
+data 8,42,8,8,170,136,10,170,168,10,170,168,10,170,168,10
+data 170,168,10,170,168,9,170,164,10,106,152,10,154,104,11,234
+data 188,9,170,164,10,170,168,9,154,100,10,165,168,10,170,168
+data 10,170,168,170,170,168,170,170,168,42,170,168,10,170,160,135

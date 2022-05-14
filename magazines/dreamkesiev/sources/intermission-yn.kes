@@ -1,0 +1,22 @@
+function sayYesTo(q$) {
+	10 print q$;" [Y/N] ";
+    20 input b$
+    if b$ = "y" b$ = "Y"
+    if b$ = "n" b$ = "N"
+    if b$ = "Y" or b$ = "N" return b$ = "Y" else print "Sorry... Just answer Y or N.":goto 10
+}
+
+input "Hello! What's your name? ";a$
+print "Hello ";a$;"!"
+if sayYesTo("Do you want to play a small game?")
+    if sayYesTo("Okay. You're the Master. Should I obey to your orders?") {
+        if sayYesTo("Do you want me to sing for you, my Master?")
+            print chr$(14)+" You are the best, ";a$;"! "+chr$(14)
+        if sayYesTo("Good. Now I'm the Master. Should you obey to MY orders?")
+            if sayYesTo("Good. Say NO.")
+                print "You failed!"
+            else
+                print "Good boy, "+a$+"..."
+    }
+else if sayYesTo("Don't you like having fun?");
+print "That's all. Bye!"

@@ -1,0 +1,70 @@
+function pressSpace() {
+    print
+    print "[[ PRESS SPACE ]]"
+    do {
+        get a$;
+    } while (a$!=" ");
+    do {
+        get a$;
+    } while (a$==" ");
+    cls
+}
+
+print("-- PAGE 1/2 --")
+
+ class Rectangle {
+    width=10*2;
+    height:40;
+    Rectangle(width,height,createsubrectangle) {
+        print "(New rectangle: Default: ";this.width;"x";this.height;" - Constr: ";width;"x";height;")"
+        this.width=width
+        this.height=height
+        if (!createsubrectangle) {
+            print "| \\_ SUB:";
+            this.subrectangle = new Rectangle(width*2,height*2,true);
+            print "\\_ (Original rectangle is still ";this.width;"x";this.height;")"
+            print "\\_ (Subrectangle is still ";this.subrectangle.width;"x";this.subrectangle.height;")"
+        }
+    }
+    area(mul) {
+        return this.width*this.height*mul;
+    }
+    setWidth(width) {
+        this.width = width;
+    }
+    getSubWidth() {
+        return this.subrectangle.width;
+    }
+}
+myrect=new Rectangle(2,3)
+print "Original property width (2): ";myrect.width
+print "Original property height (3): ";myrect.height
+print "Get area x2 (2 x 3 x 2 = 12):";myrect.area(2)
+print "(Set width property via assign to 5)"
+myrect.width=5
+print "Property width set to 5: ";myrect.width
+print "Get area x2 (5 x 3 x 2 = 30):";myrect.area(2)
+print "(Set width property via setter to 10)"
+myrect.setWidth(10);
+print "Width set to 10 using setter: ";myrect.width
+print "Get area x3 (10 x 3 x 3 = 90): ";myrect.area(3)
+
+print "(Manipulating subobject)"
+myrect.subrectangle.setWidth(50)
+print "Width set to 50 using setter: ";myrect.subrectangle.width
+print "Width of subrectangle using getter, still 50: ";myrect.getSubWidth()
+array=[1,,myrect,5]
+print "Object in array, width (10): ";array[2].width
+obj={
+    rectangle:myrect
+}
+print "Object in object (10): ";obj.rectangle.width
+pressSpace();
+print("-- PAGE 2/2 --")
+
+print "(Creating array of objects)"
+array=[new Rectangle(1,2),new Rectangle(3,4)]
+for (i=0;i<len(array);i++) {
+    print "New rectangle in array (";i;"): ";array[i].width;"x";array[i].height;" = ";array[i].area(1)
+    print "\\_ subrectangle in array (";i;"): ";array[i].subrectangle.width;"x";array[i].subrectangle.height;" = ";array[i].subrectangle.area(1)
+}

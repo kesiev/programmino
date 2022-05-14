@@ -1,0 +1,920 @@
+BODY {
+    padding: 0;
+    margin: 0;
+}
+
+/* width */
+.ide ::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+.ide ::-webkit-scrollbar-track {
+  background: #090300;
+  border: 1px solid #d6d5d4;
+}
+
+/* Handle */
+.ide ::-webkit-scrollbar-thumb {
+  background: #d6d5d4;
+}
+
+/* Handle on hover */
+.ide ::-webkit-scrollbar-thumb:hover {
+  background: #01a0e4;
+}
+
+.ide .cm-s-3024-night.CodeMirror {
+    font-family: 'Web IBM VGA 8x16';
+}
+
+.ide {
+    font-size: 16px;
+    font-family: 'Web IBM VGA 8x16';
+    background-color: #090300;
+    color:#d6d5d4;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.ide .menubar {
+    user-select: none;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    height:30px;
+    background-color: #d6d5d4;
+    color: #090300;
+    overflow: hidden;
+}
+
+.ide .statusbar {
+    user-select: none;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:30px;
+    background-color: #d6d5d4;
+    color: #090300;
+    overflow: ellipsis;
+    line-height: 30px;
+    padding:0 10px;
+}
+
+.ide .statusbar.error {
+    background-color: #db2d20;
+    color: #d6d5d4;
+}
+
+.ide .line-error {
+    background-color: #db2d20;
+}
+
+.ide .statusbar.success {
+    background-color: #01a252;
+    color: #d6d5d4;
+}
+
+.ide .menubar .menuoption {
+    display: inline-block;
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+}
+
+.ide .tabbar {
+    user-select: none;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0px;
+    height:30px;
+    background-color: #d6d5d4;
+    color: #090300;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ide .tabbar .firstbutton,
+.ide .tabbar .lastbutton {
+    display: inline-block;   
+}
+
+.ide .tabbar .tabs {
+    display: inline-block;   
+    white-space: nowrap;
+}
+
+
+.ide .bodycontainer {
+    position: absolute;
+    left:0;
+    right:0;
+    top:30px;
+    bottom:30px;
+}
+
+.ide .bodycontainer .body {
+    position: absolute;
+    left:0;
+    right:0;
+    top:1px;
+    bottom:0;
+}
+
+.ide .bodycontainer .welcomepage {
+    width:100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.ide .bodycontainer .welcomehints {
+    padding: 16px 4px;
+}
+
+.ide .bodycontainer .welcomehints .hint {
+    padding:8px;
+    background-color: #db2d20;
+    color:#d6d5d4;
+    margin:4px;
+    border-radius: 0 10px 10px 10px;
+}
+
+.ide .bodycontainer .welcomearticle .subtitle {
+    text-align: center;
+    margin:16px 0;
+}
+
+.ide .bodycontainer .welcomearticle .title {
+    text-align: center;
+    margin:0;
+    font-family: 'Keypunch029Regular';
+    padding-top: 10px;
+    font-size:60px;
+    line-height: 40px;
+    color: #01a0e4;
+}
+
+.ide .bodycontainer .welcomearticle .creditstitle {
+    margin:48px 0 16px 0;
+    text-align: center;
+    color: #01a0e4;
+}
+
+.ide .bodycontainer .welcomearticle .credit {
+    text-align: center;
+}
+
+.ide .bodycontainer .welcomearticle .credit A {
+    text-decoration: none;
+    color:#01a0e4;
+}
+
+.ide .bodycontainer .welcomearticle .box {
+    margin:16px 0 32px 0;
+    padding:16px 0;
+    border-top:1px solid #d6d5d4;
+    border-bottom:1px solid #d6d5d4;
+    text-align: center;
+}
+
+.ide .bodycontainer .welcomearticle .magazinesbox {
+    margin:16px 0 32px 0;
+    padding:16px;
+    background-color:#d6d5d4;
+    color:#090300;
+}
+
+.ide .bodycontainer .welcomearticle .magazinesbox .magazine {
+    cursor: pointer;
+}
+
+.ide .bodycontainer .welcomearticle .magazinesbox .magazine .magazinetitle {
+    color: #db2d20;
+}
+
+.ide .bodycontainer .welcomearticle .magazinesbox .magazine {
+    margin:8px 0;
+}
+
+.ide .bodycontainer .welcomearticle .mark {
+    color: #01a0e4;
+}
+
+.ide .bodycontainer .welcomearticle {
+    width:80%;
+    margin:auto;
+    padding:0 0 30px 0;
+}
+
+.ide .bodycontainer .explain {
+    width:100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ide .bodycontainer .explainpage {
+    width:80%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.ide .bodycontainer .settings {
+    width:80%;
+    margin:auto;
+    padding:30px 0;
+    height: 100%;
+}
+
+.ide .bodycontainer .settings .buttonbar {
+    position:absolute;
+    bottom:30px;
+    width:80%;
+    height:30px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ide .bodycontainer .bar .button {
+    line-height: 30px;
+    display: inline-block;
+    margin-left:8px;
+    background-color: #d6d5d4;
+    color:#090300;
+    user-select: none;
+    padding: 0 8px;
+}
+
+.ide .bodycontainer .bar .label {
+    line-height: 30px;
+    display: inline-block;
+    user-select: none;
+    padding: 0 8px;
+}
+
+.ide .bodycontainer .settings .label {
+    display: inline-block;
+}
+
+.ide .bodycontainer .settings INPUT {
+    background-color: transparent;
+    border:1px solid #d6d5d4;
+    font-family: 'Web IBM VGA 8x16';
+    color: #d6d5d4;
+    font-size: 16px;
+    outline: none;
+    display: block;
+}
+
+.ide .bodycontainer .settings ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:#5c5855;
+}
+
+.ide .bodycontainer .settings INPUT:focus {
+    border:1px solid #01a0e4;
+}
+
+.ide .bodycontainer .settings INPUT {
+    width: 100%;
+}
+
+.ide .bodycontainer .settings .packagesbar {
+    height:30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin:16px 0;
+}
+
+.ide .bodycontainer .settings .packagesbar DIV {
+    display: inline-block;
+    margin-right:8px;
+}
+
+.ide .bodycontainer .settings .packagesbox::-webkit-scrollbar-track {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.ide .bodycontainer .settings .packagesbox {
+    border-top:1px solid #d6d5d4;
+    border-bottom:1px solid #d6d5d4;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    user-select: none;
+    bottom:90px;
+    top:150px;
+    width:80%;
+}
+
+.ide .bodycontainer .settings .package {
+    white-space: nowrap;
+}
+
+.ide .bodycontainer .settings .package .toggle,
+.ide .bodycontainer .settings .package .toggledetail,
+.ide .bodycontainer .settings .package .name {
+    display: inline-block;
+}
+
+.ide .bodycontainer .settings .package .note {
+    color:#3a3432;
+}
+
+.ide .bodycontainer .settings .package .name,
+.ide .bodycontainer .settings .package .toggledetail {
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.ide .bodycontainer .package .add {
+    color: #01a252;
+}
+
+.ide .bodycontainer .package .ban {
+    color: #db2d20;
+}
+
+.ide .bodycontainer .package .dep {
+    color: #a16a94;
+}
+
+.ide .bodycontainer .package .detail {
+    white-space:normal;
+    background-color: #3a3432;
+    margin-left:30px;
+    padding:15px;
+    margin: 15px 15px 15px 30px;
+    user-select:text;
+}
+
+.ide .bodycontainer .package .detail .requires,
+.ide .bodycontainer .package .detail .required {
+    margin-top: 16px;
+}
+
+.ide .bodycontainer .package .element {
+    color: #01a0e4;
+}
+
+.ide .bodycontainer .package .sampleletter {
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.ide .bodycontainer .package .sampleletterpixelrow {
+    white-space: nowrap;
+}
+
+.ide .bodycontainer .package .sampleletterpixel {
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+}
+
+.ide .bodycontainer .package .samplecolor {
+    display: inline-block;
+    height: 16px;
+    width: 32px;
+    border: 1px solid #090300;
+}
+
+.ide .bodycontainer .package .sampleletterpixel.on {
+    background-color: #d6d5d4;
+}
+
+.ide .bodycontainer .package .sampledisplay {
+    display: inline-block;
+    border-width: 4px;
+    border-style: solid;
+    padding: 2px;
+}
+
+.ide .bodycontainer .package .samplemessage {
+    display: inline-block;
+    padding: 2px;
+}
+
+.ide .bodycontainer .package .requirement {
+    color: #01a0e4;
+}
+
+.ide .tab,
+.ide .tabbar .firstbutton,
+.ide .tabbar .lastbutton {
+    display: inline-block;
+    height:30px;
+    line-height: 30px;
+    padding:0 10px;
+}
+
+.ide .tab.selected {
+    background-color: #090300;
+    color: #d6d5d4;
+}
+
+.ide .tab DIV {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.ide .tab .close {
+    color:#db2d20;
+}
+
+.ide .tab .explain,
+.ide .bodycontainer .welcomearticle .explain {
+    color:#a16a94;
+}
+
+.ide .tab .menu,
+.ide .bodycontainer .welcomearticle .menu {
+    color:#01a0e4;
+}
+
+.ide .tab .play,
+.ide .bodycontainer .welcomearticle .play {
+    color:#01a252;
+}
+
+.ide .tab .stop,
+.ide .bodycontainer .welcomearticle .stop {
+    color:#db2d20;
+}
+
+.ide .tab .label {
+    display: inline-block;
+}
+
+.ide .display {
+    position: absolute;
+    right:24px;
+    bottom:40px;
+    box-shadow: 0px 0px 3px #d6d5d4;
+    z-index: 100;
+}
+
+.body .CodeMirror {
+    width:100%;
+    height:100%;
+}
+
+.ide .button:hover ,
+.ide .button:hover *,
+.ide .tabbar .firstbutton:hover,
+.ide .tabbar .lastbutton:hover,
+.ide .bodycontainer .button:hover ,
+.ide .bodycontainer .button:hover *,
+.ide .bodycontainer .welcomearticle .magazinesbox .magazine:hover .magazinetitle,
+.ide .bodycontainer .welcomearticle .credit A:hover {
+    background-color: #01a0e4;
+    color:#d6d5d4;
+}
+
+/* Magazines */
+
+.ide .bodycontainer .navigation {
+    position: absolute;
+    top:16px;
+    left:8px;
+    right:8px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ide .bodycontainer .documentviewer {
+    position: absolute;
+    top:58px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.ide .bodycontainer .documentviewer .pageview {
+    overflow-x: hidden;
+    width: 35%;
+    min-width: 600px;
+    min-height: 100%;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.ide .bodycontainer .documentviewer .paper {
+    position: relative;
+    box-sizing: border-box;
+    width:100%;
+    min-height: 100%;
+}
+
+.ide .bodycontainer .documentviewer .paper.normal {
+    padding:24px 48px;
+    font-family: 'AleoRegular';
+    color:#3d3b3c;
+    border:1px solid #f0dac3;
+    background: rgb(254,249,243);
+    background: radial-gradient(circle, rgba(254,249,243,1) 0%, rgba(238,237,232,1) 68%, rgba(247,226,205,1) 100%);
+}
+
+.ide .bodycontainer .documentviewer .paper.cover {
+    color:#3d3b3c;
+    background: #fff;
+    overflow: hidden;
+    height:100%;
+}
+
+.ide .bodycontainer .documentviewer .magazinetitle {
+    font-family: 'YoungSerifRegular';
+    font-size: 60px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.ide .bodycontainer .documentviewer .magazinesubtitle {
+    font-family: 'YoungSerifRegular';
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.ide .bodycontainer .documentviewer .magazinearticle {
+    padding-top:15px;
+    border-top:1px solid #3d3b3c;
+    border-bottom:1px solid #3d3b3c;
+}
+
+.ide .bodycontainer .documentviewer .magazinereferences,
+.ide .bodycontainer .documentviewer .magazinearticle {
+    margin:30px 0;
+}
+
+.ide .bodycontainer .documentviewer .tocitem {
+    margin:8px 0;
+}
+
+.ide .bodycontainer .documentviewer .pagenum {
+    display: inline-block;
+    width: 60px;
+}
+
+.ide .bodycontainer .documentviewer H1 {
+    margin:20px 0;
+    font-family: 'TTNormsBlack';
+    border-bottom:1px solid #3d3b3c;
+    padding-bottom: 10px;
+}
+
+.ide .bodycontainer .documentviewer .pagetitle {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ide .bodycontainer .documentviewer .sourcesbar {
+    text-align:right;
+    margin: 16px 0;
+}
+
+.ide .bodycontainer .documentviewer .typeinbutton,
+.ide .bodycontainer .documentviewer .learnmorebutton {
+    margin-left:10px;
+    text-decoration: none;
+    align-self:right;
+    display: inline-block;
+    padding:10px;
+    border-radius: 15px;
+    border: 3px solid #3d3b3c;
+    box-shadow: 0px 3px 0px #3d3b3c;
+    color:#3d3b3c;
+    cursor: pointer;
+}
+
+.ide .bodycontainer .documentviewer .author {
+    font-style: italic;
+    margin:0 0 15px 0;
+}
+
+.ide .bodycontainer .documentviewer .article,
+.ide .bodycontainer .documentviewer .magazinearticle {
+    margin-bottom:40px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+.ide .bodycontainer .documentviewer p {
+    margin:0 0 15px 0;
+}
+
+.ide .bodycontainer .documentviewer .article.long {
+    column-count:2;
+}
+
+.ide .bodycontainer .documentviewer li {
+    margin:8px 0;
+    line-height: 20px;
+}
+
+.ide .bodycontainer .documentviewer table {
+    border:1px solid #3d3b3c;
+    border-collapse: collapse;
+}
+
+.ide .bodycontainer .documentviewer TD,
+.ide .bodycontainer .documentviewer TH {
+    border:1px solid #3d3b3c;
+    padding:4px;
+}
+
+.ide .bodycontainer .documentviewer TH {
+    background-color: #3d3b3c;
+    color:#e5e4e4;
+    border-color:#e5e4e4;
+    font-weight: normal;
+}
+
+.ide .bodycontainer .documentviewer .code {
+    font-family: 'Keypunch029Regular';
+    display: inline-block;
+    padding:9px 3px 3px 3px;
+    white-space: pre;
+    background-color: #d2cecd;
+}
+
+.ide .bodycontainer .documentviewer .sources {
+    font-family: 'Keypunch029Regular';
+}
+
+.ide .bodycontainer .documentviewer .pageview .line {
+    padding-top:7px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.ide .bodycontainer .documentviewer .pageview .line:nth-child(odd){
+    background-color: #d2cecd;
+}
+
+
+/* Magazine covers: BASIC */
+
+.ide .bodycontainer .documentviewer .magazinecover {
+    font-family: serif;
+    color:#3d3b3c;
+}
+
+.ide .bodycontainer .documentviewer .magazinecover.top {
+    padding:0 20px;
+    margin:0px 0px 20px 0;
+    font-size: 12px;
+    text-align:center;
+    height:30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ide .bodycontainer .documentviewer .magazinecover.title {
+    padding:0 20px;
+    margin:60px 0px 10px 0px;
+    font-size: 100px;
+    line-height: 100px;
+    text-align:center;
+    z-index: 10;
+}
+
+.ide .bodycontainer .documentviewer .magazinecover.title.large {
+    font-size: 180px;
+    line-height: 120px;
+    margin-bottom:70px;
+}
+
+.ide .bodycontainer .documentviewer .magazinecover.subtitle {
+    margin:40px 20px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align:center;
+    z-index: 10;
+}
+
+.ide .bodycontainer .documentviewer .magazinecover.subtitle.large {
+    font-size: 24px;
+    line-height: 24px;
+    padding:20px 20px 15px 20px;
+}
+
+.ide .bodycontainer .documentviewer .magazinecover.footer {
+    padding:10px 20px;
+    font-size: 12px;
+    text-align:center;
+    height:30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 1;
+}
+
+/* For smaller screens */
+
+/* For smaller screens */
+@media screen and (max-height: 700px) {
+
+    .ide .bodycontainer .documentviewer .magazinecover.magazinecover.footer {
+        display: none;
+    }
+}
+
+
+@media screen and (max-height: 600px) {
+
+    .ide .bodycontainer .documentviewer .magazinecover.top {
+        padding:0 20px;
+        margin:10px 0;
+        font-size: 12px;
+    }
+
+    .ide .bodycontainer .documentviewer .magazinecover.title {
+        padding:0 20px;
+        margin:20px 0px 10px 0px;
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .ide .bodycontainer .documentviewer .magazinecover.title.large {
+        font-size: 80px;
+        line-height: 50px;
+        margin-bottom:40px;
+    }
+
+    .ide .bodycontainer .documentviewer .magazinecover.subtitle {
+        margin:10px 20px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+}
+
+/* Code explainer */
+
+.ide .explain .explanationtitle {
+    padding: 0 0 16px 8px;
+    color: #a16a94;
+}
+
+.ide .explain .iterator,
+.ide .explain .then,
+.ide .explain .else,
+.ide .explain .initializeCode,
+.ide .explain .forcode,
+.ide .explain .iteration,
+.ide .explain .iteratecondition,
+.ide .explain .conditionloop,
+.ide .explain .switchcase,
+.ide .explain .switchcasedefault,
+.ide .explain .switchcode,
+.ide .explain .classvariable,
+.ide .explain .classmethod,
+.ide .explain .definefunctionbody,
+.ide .explain .codeblock {
+    padding-left:8px;
+}
+
+.ide .explain .then,
+.ide .explain .forcode,
+.ide .explain .else,
+.ide .explain .onoption,
+.ide .explain .switchcase,
+.ide .explain .definefunctionbody {
+    border-left:1px solid #db2d20;
+    padding-left:8px;
+}
+
+.ide .explain .initializecode,
+.ide .explain .iterator,
+.ide .explain .switchcode {
+    border-left:1px solid #01a0e4;
+    padding-left:8px;
+}
+
+.ide .explain .modifier,
+.ide .explain .token,
+.ide .explain .nextiterator {
+    margin:0 2px;
+}
+
+.ide .explain .next {
+    margin-right: 8px;
+}
+
+.ide .explain .noop {
+    color:#5c5855;
+}
+
+.ide .explain .atline {
+    /*display:inline-block;*/
+    display: none;
+    font-size:10px;
+    border:1px solid #01a252;
+    padding:5px;
+    border-radius: 5px;
+    margin-right:5px;
+}
+
+.ide .explain .specialchar,
+.ide .explain .quotedchar,
+.ide .explain .unknownspecialchar {
+    background-color: #d6d5d4;
+    color: #090300;    
+    white-space: nowrap;
+    padding:0 4px;
+    margin:0 1px;
+}
+
+.ide .explain .unknownspecialchar {
+    background-color: #db2d20;
+    color:#d6d5d4;
+}
+
+.ide .explain .spacechar {
+    display: inline-block;
+    border:1px solid #5c5855;
+}
+
+.ide .explain .expression {
+    border:1px solid #01a0e4;
+    padding:3px;
+    margin:3px;
+    border-radius:5px;
+    display: inline-block;
+}
+
+.ide .explain .range {
+    border:1px dashed #01a0e4;
+    padding:3px;
+    margin:3px;
+    border-radius:5px;
+    display: inline-block;
+}
+
+.ide .explain .codeline {
+    border-top:1px dashed #5c5855;
+    padding:4px 0;
+}
+
+.ide .explain .codeline:first-of-type {
+    border-top: 0;
+}
+
+.ide .explain .modifier {
+    color:#db2d20;
+}
+
+.ide .explain .specialsymbol {
+    color:#01a252;
+}
+
+.ide .explain .boolean,
+.ide .explain .token.null {
+    background-color: #a16a94;
+    color: #d6d5d4;
+    white-space: nowrap;
+    padding:0 4px;
+    margin:0 1px;
+}
+
+.ide .explain .data {
+    margin:16px 8px;
+    background-color:#d6d5d4;
+    color:#090300;
+    padding:16px 8px;
+}
+
+.ide .explain .dataline {
+    border-top:1px dashed #090300;
+    padding:8px 0;
+}
+
+.ide .explain .label {
+    display:inline-block;
+    background-color:#5c5855;
+    color:#090300;
+    padding:5px;
+    margin-right:8px;
+}

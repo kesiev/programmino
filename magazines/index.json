@@ -1,0 +1,29 @@
+{
+    "magazines":[
+        {
+            "id":"dreamkesiev",
+            "title":"Dream KesieV",
+            "description":"The machine I've seen in my dreams."        
+        },{
+            "id":"basiccomputergames",
+            "title":"BASIC Computer Games",
+            "description":"A collection of Programmino-compatible BASIC games from the book BASIC Computer Games."        
+        },{
+            "id":"dreamlegacybasic",
+            "title":"Dream Legacy Basic",
+            "description":"A collection of Programmino-compatible BASIC games."
+        },{
+            "id":"dream64",
+            "title":"Dream 64",
+            "description":"A collection of Programmino-compatible Commodore 64 BASIC games."
+        },{
+            "id":"dreamzx",
+            "title":"Dream ZX",
+            "description":"A collection of Programmino-compatible ZX Spectrum 48K BASIC games."
+        },{
+            "id":"brokendreams",
+            "title":"Broken Dreams",
+            "description":"A collection of Programmino-incompatible programs."
+        }
+    ]
+}

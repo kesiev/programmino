@@ -1,0 +1,46 @@
+10 print "Managing line numbers"
+20 print "GOTO with line number..."
+30 goto 1000
+100 print "GOSUB to a line number. Returning..."
+110 return
+1000 print "At a GOTO with line number"
+1010 print "GOSUB with line number...
+1020 gosub 100
+1030 print "Back from GOSUB..."
+
+label1:
+    print "Now using labels instead..."
+    print "GOTO label2"
+    goto label2
+
+label2:
+    print "Moved to label 2"
+    print "GOSUB to label 3"
+    gosub label3
+    print "Back grom GOSUB..."
+    print "Using sublabels"
+
+    label1:
+        i++
+        print "I'm label1 in label2 for the ";i;" time."
+
+    if (i<3)
+        goto label1
+    
+    print "Loop endend."
+    print "Now using line numbers within labels"
+
+    2010 print "I'm a numbered line in label2"
+    2020 print "GOSUB to a line number in label 2"
+    2030 gosub 3000
+    2040 print "I'm back from GOSUB to a line number in label 2"
+    2050 print "The end!"
+    2060 end
+    3000 print "I'm here from a GOSUB to line number in label 2!"
+    3010 print "Going back..."
+    3020 return
+
+label3:
+    print "At label3 via GOSUB..."
+    print "Going back..."
+    return

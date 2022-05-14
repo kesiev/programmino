@@ -1,0 +1,8 @@
+a=true:b=false;c=a&&b
+print "a: ";a
+print "b: ";b
+print "!a: ";!a
+print "!b: ";!b
+print "a && b: ";a&&b
+print "a || b: ";a||b
+print "c = a && b: ";c

@@ -1,0 +1,918 @@
+<html><head>
+   
+    <!-- Editor -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/codemirror/3024-night.css">
+    <link rel="stylesheet" href="libs/codemirror/codemirror.css">
+    <link rel="stylesheet" href="css/fonts/aleo/stylesheet.css">
+    <link rel="stylesheet" href="css/fonts/ttnorms-black/stylesheet.css">
+    <link rel="stylesheet" href="css/fonts/youngserif/stylesheet.css">
+    <link rel="stylesheet" href="css/fonts/keypunch029/stylesheet.css">
+    <link rel="stylesheet" href="css/fonts/ibmvga8x16/stylesheet.css">
+    
+    <script src="libs/codemirror/codemirror.js"></script>
+
+    <!-- Magazines -->
+    <script src="js/magazines.js"></script>
+
+    <!-- Programmino -->
+    <script src="js/const.js"></script>
+    <script src="js/tools.js"></script>
+
+    <script src="js/tokens.js"></script>
+
+    <script src="js/system/parser.js"></script>
+    <script src="js/system/parser-parsers.js"></script>
+
+    <script src="js/system/cpu.js"></script>
+    <script src="js/system/cpu-runners.js"></script>
+
+    <script src="js/system/clock.js"></script>
+    <script src="js/system/memory.js"></script>
+    <script src="js/fonts.js"></script>
+    <script src="js/system/display.js"></script>
+    <script src="js/system/charmap.js"></script>
+    <script src="js/system/logic.js"></script>
+
+    <script src="js/dreambuilder.js"></script>
+
+    <script src="js/bundles/programmino.js"></script>
+    <script src="js/bundles/retro.js"></script>
+    <script src="js/bundles/legacybasic.js"></script>
+    <script src="js/bundles/kesiev.js"></script>
+    <script src="js/bundles/64.js"></script>
+    <script src="js/bundles/zx.js"></script>
+
+    </head>
+    <body onload="onl()">
+    </body>
+
+<script>
+// --- INTERPRETE
+// @TODO: Ritestare tutto (aree di memoria ora cappate)
+
+let IDE=function(parent) {
+
+    const
+        NAME="Programmino",
+        VERSION="0.1",
+        STORAGE_ID="Programmino-" + VERSION,
+        CREDITS=[
+            { line: "Programmino is Open Source and MIT/GPL2 licensed", github:"https://github.com/kesiev/programmino" },
+            { line: "Coded in 2022 by KesieV Norimaki", website:"https://kesiev.com/", twitter:"https://twitter.com/kesiev", github:"https://github.com/kesiev" },
+            { line: "Programmino IDE uses CodeMirror 5 text editor", website:"https://codemirror.net/" },
+            { line: "Programmino IDE heavily uses the IBM VGA 8x16 font", website:"https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_8x16" },
+            { line: "Magazines are using Aleo, TTNorms-black, Young Serif, and KeyPunch029 fonts" },
+            { line: "More credits in magazines" }
+        ],
+        THANKS=[
+            { line:"Bianca", website:"http://www.linearkey.net/" },
+            { line:"Phab!" },
+            { line:"Morpheus" }
+        ],
+        AUTOSAVE_DELAY=500;
+
+    function div(className, parent) {
+        let div=document.createElement("div");
+        div.className = className;
+        if (parent) parent.appendChild(div);
+        return div;
+    }
+
+    function input(className, placeholder, parent) {
+        let input=document.createElement("input");
+        input.setAttribute("placeholder",placeholder);
+        input.type="text";
+        div.className = className;
+        if (parent) parent.appendChild(input);
+        return input;
+    }
+
+    function empty(node) {
+        node.innerHTML="";
+    }
+
+    let
+        ide=div("ide",parent),
+        codeView=div("codeview",ide),
+        bodyContainer=div("bodycontainer",codeView);
+
+    let Session=function() {
+
+        let
+            saveSessionTimeout=0,
+            programId=0;
+        
+        function saveSession() {
+            let save={
+                focusedTab:tabBar.getFocusedTabIndex(),
+                tabs:tabBar.serializeTabs()
+            };
+            localStorage[STORAGE_ID]=JSON.stringify(save);
+        }
+
+        this.newCodeTab=function() {
+            programId++;
+            let t=new CodeTab(tabBar,"Program "+programId,"");
+            session.save();
+        }
+
+        this.newWelcomeTab=function() {
+            let t=new WelcomeTab(tabBar);
+            session.save();
+        }
+
+        this.save=function() {
+            if (saveSessionTimeout) clearTimeout(saveSessionTimeout);
+            saveSessionTimeout=setTimeout(function(){
+                saveSession();
+            },AUTOSAVE_DELAY);
+        }
+
+        this.start=function() {
+            document.title=NAME;
+
+            let storage = localStorage[STORAGE_ID];
+            if (storage) {
+                let load=JSON.parse(storage);
+                if (load.tabs)
+                    load.tabs.forEach(tab=>{
+                        switch (tab.type) {
+                            case "code":{
+                                new CodeTab(tabBar,tab.title,tab.code);
+                                break;
+                            }
+                            case "magazine":{
+                                new MagazineTab(tabBar,tab.id,tab.page);
+                                break;
+                            }
+                            case "welcome":{
+                                new WelcomeTab(tabBar);
+                                break;
+                            }
+                        }
+                    });
+                if (load.focusedTab !== undefined) tabBar.setFocusedTabIndex(load.focusedTab);
+                statusBar.setText("Welcome back to " + NAME + " " + VERSION + "!");
+            } else {
+                this.newWelcomeTab();
+                statusBar.setText("Welcome to " + NAME + " " + VERSION + "!");
+            }
+        }
+    }
+
+    let TabBar=function() {
+        let
+            tabs=[],
+            focusedTab=0,
+            bar=div("tabbar",codeView),
+            firstButton=div("firstbutton",bar),
+            tabsNode=div("tabs",bar),
+            lastButton=div("lastbutton",bar);
+
+        firstButton.innerHTML="&#x263B;";
+        lastButton.innerHTML="+";
+        
+        bar.addEventListener("click",function(e){
+            if ((e.target === this) && (e.detail == 2))
+                session.newCodeTab();
+        });
+
+        firstButton.addEventListener("click",function(e){
+            session.newWelcomeTab();
+        });
+
+        lastButton.addEventListener("click",function(e){
+            session.newCodeTab();
+        });
+
+        this.node = tabsNode;
+
+        this.focus=function(tab) {
+            tabs.forEach(currentTab=>{
+                let showButtons="";
+                if (currentTab == tab) {
+                    bodyContainer.appendChild(currentTab.content);
+                    currentTab.tab.className = "tab selected";
+                } else {
+                    if (currentTab.content.parentNode)
+                        currentTab.content.parentNode.removeChild(currentTab.content);
+                    currentTab.tab.className = "tab";
+                    showButtons="none";
+                }
+                if (currentTab.settingsButton) currentTab.settingsButton.style.display=showButtons;
+                if (currentTab.explainButton) currentTab.explainButton.style.display=showButtons;
+            });
+            focusedTab=tab;
+            focusedTab.onTabFocus(focusedTab);
+            session.save();
+        }
+
+        this.close=function(tab) {
+            let
+                nextTab=0,
+                tabIndex = tabs.indexOf(tab);
+            tab.onTabClose(tab);
+            if (tabs[tabIndex+1])
+                nextTab=tabs[tabIndex+1];
+            tabs.splice(tabIndex,1);
+            tab.tab.parentNode.removeChild(tab.tab);
+            if (tab.content.parentNode) tab.content.parentNode.removeChild(tab.content);
+            if (tab == focusedTab)
+                if (nextTab)
+                    this.focus(nextTab);
+                else if (tabs[tabs.length-1])
+                    this.focus(tabs[tabs.length-1]);
+            session.save();
+        }
+
+        this.add=function(tab) {
+            tabs.push(tab);
+            this.focus(tab);
+        }
+
+        this.getFocusedTabIndex = function() {
+            return tabs.indexOf(focusedTab);
+        }
+
+        this.setFocusedTabIndex = function(index) {
+            if (tabs[index]) tabBar.focus(tabs[index]);
+        }
+
+        this.serializeTabs=function() {
+            let out=[];
+            tabs.forEach(tab=>{
+                out.push(tab.save());
+            });
+            return out;
+        }
+    }
+
+    let CodeRunner=function() {
+        let
+            runningSystem = 0,
+            runningTab = 0,
+            debuggingTab = 0,
+            display=div("display",ide);
+
+        window.addEventListener("resize",()=>{
+            resize(runningSystem)
+        });
+
+        function resize(S) {
+            if (S) {
+                let
+                    displayWidth=S.display.getWidth(),
+                    displayHeight=S.display.getHeight(),
+                    screenWidth=parent.clientWidth-30;
+                    screenHeight=parent.clientHeight-90,
+                    scale=Math.floor(screenHeight/displayHeight);
+                if (displayWidth*scale>screenWidth)
+                    scale=Math.floor(screenWidth/displayWidth);
+                if (scale<1) scale=1;
+                S.display.setScale(scale,scale);
+            }
+        }
+
+        function offDisplay() {
+            empty(display);
+            if (display.parentNode) display.parentNode.removeChild(display);
+        }
+
+        function onDisplay(node) {
+            offDisplay();
+            display.appendChild(node);
+            ide.appendChild(display);
+        }
+            
+        function removeErrors() {
+            if (debuggingTab) debuggingTab.removeErrors();
+        }
+
+        function stopSystem() {
+            offDisplay();            
+            if (runningSystem) {
+                runningTab.playStopButton.innerHTML="<span class='play'>&#x25BA;</span>";
+                runningSystem.clock.abort();
+                runningSystem = 0;
+                runningTab = 0;
+            }
+        }
+
+        function resetStatusBar() {
+            removeErrors();
+            statusBar.setText("Ready.");
+        }
+
+        function listenerOnError(S,oneline,line) {
+            statusBar.setText(debuggingTab.title+": "+oneline,"error");
+            if (line !== undefined)
+                debuggingTab.showErrorAtLine(line);
+        }
+
+        function stopTab(tab) {
+            if (tab == runningTab) stopSystem();
+            if (tab == debuggingTab) resetStatusBar();
+        }
+
+        function playStopTab(tab) {
+            let stop = tab == runningTab;
+            if (stop) {
+                stopSystem();
+            } else {
+                let code = tab.getCode();
+                resetStatusBar();
+                stopSystem();
+                if (code !== false) {
+                    runningTab = tab;
+                    debuggingTab = tab;
+                    runningTab.playStopButton.innerHTML="<span class='stop'>&#x25A0;</span>";
+                    runningSystem  = DreamBuilder.run(code, {
+                        error:listenerOnError,
+                        start:function(S) {
+                            resize(S);
+                            onDisplay(S.display.getNode());
+                            S.display.focus();
+                        },
+                        ended:function(S,oneline,result) {
+                            statusBar.setText(runningTab.title+": "+oneline,"success");
+                        }
+                    }, false, false);
+                }
+            }
+        }
+
+        this.stopTab = (tab) => stopTab(tab);
+
+        this.playStopTab = (tab) => playStopTab(tab);
+
+        this.resetStatusBar = () =>  resetStatusBar();
+
+        this.explainTab = (tab) => {
+            resetStatusBar();
+            debuggingTab = tab;
+            return DreamBuilder.explain(debuggingTab.getCode(), {
+                error:listenerOnError
+            }, true, false);
+        }
+
+        stopSystem();
+    }
+
+    let MenuOption=function(menu,title,code) {
+        this.onclick=0;
+        this.option=div("menuoption button",menu.bar);
+        this.option.addEventListener("click", e => this.onclick());
+        this.setTitle=function(title) {
+            this.option.innerHTML=title;
+        }
+        this.setCode=function(code) {
+            this.onclick=code;
+        }
+        this.setTitle(title);
+        this.setCode(code);
+    }
+
+    let MenuBar=function() {
+        this.bar=div("menubar",codeView);
+        this.addOption=function(title,code) {
+            return new MenuOption(this,title,code);
+        }
+    }
+
+    let StatusBar=function(code) {
+        this.bar=div("statusbar",codeView);
+        this.bar.addEventListener("click", e => code());
+        this.setText=function(text, status) {
+            this.bar.innerHTML = text;
+            this.bar.className="statusbar "+(status|| "");
+        }
+    }
+
+    let Tab=function(tabbar,settings) {
+        this.tab=div("tab",tabbar.node),
+        this.content=div("body")
+        this.closeButton = div("close button",this.tab);
+        this.tabLabel = div("label",this.tab);
+        this.tabLabel.addEventListener("click", e => tabbar.focus(this));
+        this.closeButton.addEventListener("click", e => tabbar.close(this));
+        this.closeButton.innerHTML="x";
+        this.setTitle = function(title) {
+            this.title = title;
+            this.tabLabel.innerHTML=title;
+        }
+        if (settings && settings.menuButton) {
+            this.settingsButton = div("menu button",this.tab);
+            this.settingsButton.innerHTML="&#x2261;"
+            this.settingsButton.addEventListener("click", e => this.onMenuButton(this));
+        }
+        if (settings && settings.explainButton) {
+            this.explainButton = div("explain button",this.tab);
+            this.explainButton.innerHTML="?"
+            this.explainButton.addEventListener("click", e => this.onExplainButton(this));
+        }
+        if (settings && settings.playStopButton) {
+            this.playStopButton = div("playstop button",this.tab);
+            this.playStopButton.innerHTML="<span class='play'>&#x25BA;</span>";
+            this.playStopButton.addEventListener("click", e => this.onPlayStopButton(this));
+        }
+    }
+
+    let MagazineTab=function(tabbar,id,toPage) {
+        this.tab=new Tab(tabbar,{
+            playStopButton:true
+        });
+
+        let
+            page=-1,
+            pagesCount=-1,
+            tocPage=-1,
+            navigationBar=div("navigation bar", this.tab.content),
+            documentViewer=div("documentviewer", this.tab.content),
+            pageView=div("pageview", documentViewer),
+            tocButton=div("tocpage button",navigationBar),
+            firstPageButton=div("firstpage button",navigationBar),
+            prevPageButton=div("prevpage button",navigationBar),
+            pageNumber=div("pagenumber label",navigationBar),
+            nextPageButton=div("nextpage button",navigationBar),
+            lastPageButton=div("lastpage button",navigationBar);
+
+        tocButton.innerHTML = "&#x2261;"
+        firstPageButton.innerHTML = "&#x2502;&#x25C4;"
+        prevPageButton.innerHTML = "&#x25C4;"
+        nextPageButton.innerHTML = "&#x25BA;"
+        lastPageButton.innerHTML = "&#x25BA;&#x2502;"
+        
+        tocButton.style.display="none";
+
+        tocButton.addEventListener("click",()=>{
+            showPage(tocPage);
+        });
+
+        firstPageButton.addEventListener("click",()=>{
+            showPage(0);
+        });
+
+        lastPageButton.addEventListener("click",()=>{
+            if (pagesCount > 0) showPage(pagesCount);
+        });
+
+        nextPageButton.addEventListener("click",()=>{
+            showPage(page+1);
+        });
+
+        prevPageButton.addEventListener("click",()=>{
+            showPage(page-1);
+        });
+
+        function showPageContent(tab,node,content) {
+            node.innerHTML="<div class=\"paper "+content.pageType+"\" style=\""+content.pageStyle+"\">"+content.body+"</div>";
+            tab._content=content;
+            [
+                {
+                    query:"[magazine-gotopage]",
+                    events:{
+                        click:function() {
+                            let page=parseInt(this.getAttribute("magazine-gotopage"));
+                            this._tab.gotoPage(page);
+                        }
+                    }
+                },{
+                    query:"[magazine-typein]",
+                    events:{
+                        click:function() {
+                            new CodeTab(tabbar,this._tab._content.program.title,this._tab._content.program.sources);
+                        }
+                    }
+                }
+            ].forEach(selector=>{
+                let elements = node.querySelectorAll(selector.query);
+                for (let i=0;i<elements.length;i++) {
+                    elements[i]._tab=tab;
+                    if (selector.render)
+                        selector.render(elements[i]);
+                    if (selector.events)
+                        for (let eventName in selector.events)
+                            elements[i].addEventListener(eventName, selector.events[eventName]);
+                }
+            });
+            documentViewer.scrollTo(0,0);
+        }
+
+        let showPage=(newPage)=>{
+            if (newPage<0) newPage=0;
+            if (pagesCount>0 && (newPage>=pagesCount)) newPage=pagesCount-1;
+
+            if (newPage != page)
+                magazines.getPage(id,newPage,(content)=>{
+                    this.tab.setTitle(content.magazine.shortTitle);
+                    pagesCount = content.magazine.pages.length;
+                    if (content.magazine.tocPage !== undefined) {
+                        tocPage = content.magazine.tocPage;
+                        tocButton.style.display="";
+                    } else {
+                        tocButton.style.display="none";
+                    }
+                    if (newPage>=pagesCount) showPage(pagesCount-1);
+                    else {
+                        page=newPage;
+                        pageNumber.innerHTML=(page+1)+"/"+pagesCount;
+                        if (content.body) showPageContent(this.tab,pageView,content);
+                        else showPageContent(this.tab,pageView,{ body:"(Page not found)" });
+                        session.save();
+                    }
+                });
+        }
+
+        this.tab.setTitle("Magazine");
+        this.tab.gotoPage=function(toPage) {
+            showPage(toPage);
+        }
+        this.tab.onTabFocus=function(tab) {}
+        this.tab.onTabClose=function(tab) {}
+        this.tab.save=function() {
+            return {
+                type:"magazine",
+                id:id,
+                page:page
+            }
+        }
+        this.tab.onPlayStopButton=function(tab) {
+            codeRunner.playStopTab(tab);
+        }
+        this.tab.getCode=function() {
+            if (this._content.program && this._content.program.sources)
+                return this._content.program.sources;
+            else
+                return false;
+        }
+        this.tab.onTabClose=function(tab) {
+            codeRunner.stopTab(this)
+        }
+        this.tab.removeErrors=function() {}
+        this.tab.showErrorAtLine=function() {}
+        showPage(toPage);
+        tabbar.add(this.tab);
+    }
+
+    let WelcomeTab=function(tabbar,id, toPage) {
+        this.tab=new Tab(tabbar);
+
+        let
+            welcomeView=div("pageview", this.tab.content),
+            welcomePage=div("welcomepage", welcomeView),
+            topView=div("welcomehints", welcomePage),
+            bodyView=div("welcomearticle", welcomePage),
+            welcomeBoxes={};
+
+        function formatPersons(list) {
+            let out="";
+            list.forEach(person=>{
+                out+="<div class='credit'>"+person.line;
+                if (person.website) out+=" [ <a target='blank' href='"+person.website+"'>Page</a> ]";
+                if (person.github) out+=" [ <a target='blank' href='"+person.github+"'>GitHub</a> ]";
+                if (person.twitter) out+=" [ <a target='blank' href='"+person.twitter+"'>Twitter</a> ]";
+                out+="</div>";
+            });
+            return out;
+        }
+
+        this.tab.setTitle("Welcome!");
+        this.tab.gotoPage=function(toPage) {
+            showPage(toPage);
+        }
+        this.tab.onTabFocus=function(tab) {}
+        this.tab.onTabClose=function(tab) {}
+        this.tab.save=function() {
+            return {
+                type:"welcome"
+            }
+        };
+
+        [
+            { into:topView, type:"span", className:"hint", html:"&#x2191; &#x263B; to open this tab again, + to start coding!" },
+            { into:bodyView, type:"div", className:"subtitle", html:"Welcome to" },
+            { into:bodyView, type:"div", className:"title", html:"Programmino" },
+            { into:bodyView, type:"div", className:"subtitle", html:"Version "+VERSION },
+            { into:bodyView, type:"div", className:"box", html:"(Best with keyboard and mouse)<br><br><span class='mark'>Programmino</span> is an experimental Fantasy Computer that <span class='mark'>simulates multiple features from different real-life retro computers and coding styles/syntaxes from different languages at the same time</span>. Features can be picked and mixed by single programs, so valid Programmino programs may look like tidy and coherent regular code, obscure blocks of abbreviations, or crazy irregular pastiches of clashing stuff from different standards and machines. The same may happen when executed - you decide. <span class='mark'>It tries to implement a dream</span> of floating chunks of unrecognizable code, unreadable walls of text, and pulsating lo-res graphics I had in the last weeks of December 2021.<br><br>On tabs press <span class='play'>&#x25BA;</span>/<span class='stop'>&#x25A0;</span> to run/stop the program, <span class='menu'>&#x2261;</span> to add/remove packages to the program, and <span class='explain'>?</span> to see the program explanation. Have fun!" },
+            { into:bodyView, type:"div", className:"title", html:"Magazines" },
+            { into:bodyView, type:"div", className:"box", html:"Decades ago we used to type-in programs from magazines and books to play, to learn coding basics and tips &amp; tricks. Here you are." },
+            { into:bodyView, type:"div", className:"magazinesbox", as:"magazinesBox" },
+            { into:bodyView, type:"div", className:"creditstitle", html:"Credits" },
+            { into:bodyView, type:"div", html:formatPersons(CREDITS) },
+            { into:bodyView, type:"div", className:"creditstitle", html:"&#x263B; Thanks! &#x263B;" },
+            { into:bodyView, type:"div", html:formatPersons(THANKS) },
+        ].forEach(row=>{
+            let node=document.createElement(row.type);
+            if (row.html) node.innerHTML = row.html;
+            if (row.className) node.className = row.className;
+            if (row.as) welcomeBoxes[row.as]=node;
+            row.into.appendChild(node);
+        });
+
+        magazines.getIndex((index)=>{
+            let ul=document.createElement("ul");
+            index.magazines.forEach(magazine=>{
+                let row=document.createElement("div");
+                row.className="magazine";
+                row.innerHTML="&#x25BA; <span class='magazinetitle'>"+magazine.title+"</span> - "+magazine.description;
+                row._id=magazine.id;
+                row.addEventListener("click",()=>{
+                    new MagazineTab(tabbar,magazine.id,0);
+                });
+                welcomeBoxes.magazinesBox.appendChild(row);
+            })
+        });
+
+        tabbar.add(this.tab);
+        session.save();
+    }
+
+    let CodeTab=function(tabbar,title,text) {
+
+        const SORTMODES=[
+            "name",
+            "required packages",
+            "requiring packages"
+        ];
+
+        function updatePackagesList() {
+            let filter=quickSearch.value.toLowerCase();
+            sortBy.innerHTML="by "+SORTMODES[sortMode];
+            sortedPackages.forEach(package=>{
+                if (!filter || (package.index.id.toLowerCase().indexOf(filter)!=-1)||(package.index.description.toLowerCase().indexOf(filter)!=-1)) {
+                    package._node.style.display="";
+                    let detailText="<div class='description'>"+package.index.description+"</div><div class='content'>"+package.index.contains+"</div>";
+                    if (package.index.requires) {
+                        detailText+="<div class='requires'>Requires:<ul>";
+                        package.index.requires.forEach(package=>detailText+="<li>"+getRequirementSymbol(package)+" <span class='requirement'>"+package+"</span></li>");
+                        detailText+="</div>";
+                    }
+                    if (package.index.requiredBy) {
+                        detailText+="<div class='requires'>Required by:<ul>";
+                        package.index.requiredBy.forEach(package=>detailText+="<li>"+getRequirementSymbol(package)+" <span class='requirement'>"+package+"</span></li>");
+                        detailText+="</div>";
+                    }
+                    package._detail.innerHTML=detailText;
+                    package._toggle.innerHTML="["+getRequirementSymbol(package._toggle._id)+"]";
+                } else package._node.style.display="none";
+            });
+        }
+
+        function createPackagesList() {
+            DreamBuilder.sortPackages(sortedPackages, codePackages, sortMode);
+            empty(packagesBox);
+            sortedPackages.forEach(package=>{
+                let node=div("package",packagesBox);
+
+                package._node=node;
+                package._toggle=div("toggle button",node);
+                package._toggle._id = package.id;
+                
+                let
+                    toggledetail=div("toggledetail button",node),
+                    name=div("name",node);
+                package._detail=div("detail");
+                package._detail._parent=node;
+
+                name.innerHTML=package.id+" <span class='note'>"+package.index.description+"</span>";
+
+                toggledetail.innerHTML="&nbsp;+&nbsp;";
+                toggledetail._detail=package._detail;
+                toggledetail.addEventListener("click",onToggleDetail);
+                package._toggle.addEventListener("click",onPackageToggleDetail);
+                
+            });
+            updatePackagesList();
+        }
+
+        function getRequirementSymbol(package) {
+            switch (codePackages[package]) {
+                case 0:{
+                    return "<span class=ban>&lt;</span>";
+                    break;
+                }
+                case 1:{
+                    return "<span class=add>&gt;</span>";
+                    break;
+                }
+                case 2:{
+                    return "<span class=dep>&raquo;</span>";
+                    break;
+                }
+                default:{
+                    return "&nbsp;";
+                }
+            }
+        }
+
+        function onToggleDetail() {
+            this._detailshow=!this._detailshow;
+            if (this._detailshow) {
+                this.innerHTML="&nbsp;-&nbsp;";
+                if (!this._detail.parentNode)
+                    this._detail._parent.appendChild(this._detail);
+            } else {
+                this.innerHTML="&nbsp;+&nbsp;";
+                if (this._detail.parentNode)
+                    this._detail.parentNode.removeChild(this._detail);
+            }
+        }
+
+        function onOk() {
+            let code=DreamBuilder.setCodePackages(this._tab.getCode(),codePackages);
+            this._tab.setCode(code);
+            title=this._tab.programName.value.trim();
+            this._tab.setTitle(title == "" ? "(no name)" : title);
+            session.save();
+            showEditor();
+        }
+
+        function onSortByClick() {
+            sortMode=(sortMode+1)%SORTMODES.length;
+            createPackagesList();
+        }
+
+        function onPackageToggleDetail() {
+            let package=this._id;
+            switch (codePackages[package]) {
+                case 1:{
+                    codePackages[package]=0;
+                    break;
+                }
+                case 0:{
+                    delete codePackages[package];
+                    break;
+                }
+                case 2:
+                default:{
+                    codePackages[package]=1;
+                    break;
+                }
+            }
+            DreamBuilder.updatePackagesDeps(codePackages);
+            updatePackagesList();
+        }
+
+        let
+            mode = 0,
+            codePackages=0, sortedPackages = 0, sortMode = 0,
+            settings, programName, packagesBox, sortBy = 0, quickSearch = 0,
+            showEditor=()=>{
+                mode=0;
+                empty(settings);
+                empty(explainPage);
+                this.tab.editor.getWrapperElement().style.display="block";
+                this.tab.editor.refresh();
+                this.tab.editor.focus();
+                this.tab.settings.style.display="none";
+                this.tab.explain.style.display="none";
+            },
+            showExplain=()=>{
+                mode=2;
+                empty(settings);
+                empty(explainPage);
+
+                let explanation = codeRunner.explainTab(this.tab);
+                if (explanation) {
+                    this.tab.editor.getWrapperElement().style.display="none";
+                    this.tab.settings.style.display="none";
+                    this.tab.explain.style.display="block";
+                    explainPage.innerHTML = "<div class='explanationtitle'>Explanation:</div>"+explanation;
+                } else showEditor();
+
+            },
+            showSettings=()=>{
+                mode=1;
+                empty(settings);
+                empty(explainPage);
+                this.tab.editor.getWrapperElement().style.display="none";
+                this.tab.settings.style.display="block";
+                this.tab.explain.style.display="none";
+
+                let row=div("",settings);
+                div("label",row).innerHTML="Program name:";
+                this.tab.programName=input("programname","Program name",row);
+                this.tab.programName.value = title;
+
+                row=div("packagesbar bar",settings);
+                div("label",row).innerHTML="Packages:";
+
+                let sort=div("sort button",row);
+                sort.innerHTML="Sort";
+                sort.addEventListener("click",createPackagesList);
+
+                sortBy=div("sortby button",row);
+                sortBy.addEventListener("click",onSortByClick);
+
+                quickSearch=input("quicksearch","Package search",settings);
+                quickSearch.addEventListener("change",updatePackagesList);
+                quickSearch.addEventListener("keyup",updatePackagesList);
+
+                packagesBox=div("packagesbox",settings);
+
+                codePackages=DreamBuilder.getCodePackages(this.tab.getCode());
+                sortedPackages=DreamBuilder.getPackages();
+                
+                let
+                    buttonbar=div("buttonbar bar",settings),
+                    cancelbutton=div("cancel button",buttonbar),
+                    okbutton=div("ok button",buttonbar);
+
+                okbutton.innerHTML="OK";
+                cancelbutton.innerHTML="Cancel";
+
+                okbutton._tab=this.tab;
+                okbutton.addEventListener("click",onOk);
+                cancelbutton.addEventListener("click",showEditor);
+
+                createPackagesList();
+
+            }        
+
+        this.tab=new Tab(tabbar,{
+            menuButton:true,
+            explainButton:true,
+            playStopButton:true
+        });
+        this.tab.setTitle(title);
+        this.tab.editor=CodeMirror(this.tab.content,{
+            value:text||"",
+            theme:"3024-night",
+            styleActiveLine: true,
+            lineNumbers: true,
+            lineWrapping: true
+        });
+        this.tab.editor.on("change", function() { session.save() });
+        settings=this.tab.settings=div("settings", this.tab.content);
+        explain=this.tab.explain=div("explain", this.tab.content);
+        explainPage=this.tab.explainPage=div("explainpage", explain);
+        this.tab.getCode=function() {
+            return this.editor.getValue();
+        }
+        this.tab.setCode=function(code) {
+            this.editor.setValue(code);
+        }
+        this.tab.onMenuButton=function() {
+            if (mode != 1) showSettings();
+            else showEditor();
+        }
+        this.tab.onExplainButton=function() {
+            if (mode != 2) showExplain();
+            else showEditor();
+        }
+        this.tab.onPlayStopButton=function(tab) {
+            codeRunner.playStopTab(tab);
+        }
+        this.tab.onTabFocus=function(tab) {
+            if (mode == 0) {
+                tab.editor.refresh();
+                tab.editor.focus();
+            }
+        }
+        this.tab.onTabClose=function(tab) {
+            codeRunner.stopTab(this)
+        }
+        this.tab.removeErrors=function() {
+            for (let i=0;i<this.editor.lineCount();i++)
+                this.editor.removeLineClass(i, 'background', 'line-error');
+            this.editor.refresh();
+        }
+        this.tab.showErrorAtLine=function(line) {
+            this.editor.addLineClass(line, 'background', 'line-error');
+            this.editor.refresh();
+        }
+        this.tab.save=function() {
+            return {
+                type:"code",
+                title:title,
+                code:this.getCode()
+            }
+        }
+
+        tabbar.add(this.tab);
+        showEditor();
+    }
+
+    // Initialization
+
+    let
+        magazines = new Magazines("magazines"),
+        session = new Session();
+        codeRunner = new CodeRunner(),
+        tabBar = new TabBar(),
+        statusBar = new StatusBar(function(){
+            codeRunner.resetStatusBar();
+        });
+
+    session.start();
+}
+
+
+function onl() {
+    DreamBuilder.initialize();
+    DreamBuilder.setDefaultConfiguration(">dream-kesiev");
+    let ide=new IDE(document.body);
+}
+
+</script></html>
