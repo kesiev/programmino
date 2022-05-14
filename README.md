@@ -18,13 +18,17 @@
 
 <div align="center" style="margin:60px 0">
     <p><img src="markdown/screenshot1.png"></p>
-    INTERMISSION - Credits for Programmino by KesieV
+    <p>INTERMISSION - Credits for Programmino by KesieV</p>
 </div>
+
+<div>&nbsp;</div>
 
 <div align="center" style="margin:60px 0">
     <p><img src="markdown/screenshot2.png"></p>
     <a href="https://gkanold.wixsite.com/homeputerium/games-list-2020">Covid Breaker</a> for Commodore 64 BASIC by Davide Fichera (Naufr4g0 of Phaze101)
 </div>
+
+<div>&nbsp;</div>
 
 
 You can read more about Programmino in built-in magazines:
